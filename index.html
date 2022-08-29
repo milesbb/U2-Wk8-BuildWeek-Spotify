@@ -17,7 +17,10 @@
         },
       };
 
-      fetch("https://deezerdevs-deezer.p.rapidapi.com/search?q=eminem", options)
+      fetch(
+        "https://striveschool-api.herokuapp.com/api/deezer/search?q=eminem",
+        options
+      )
         .then((response) => response.json())
         .then((response) => {
           const albums = response.data;
@@ -29,6 +32,14 @@
             ALBUMIMAGES[i].src = albums[i].album.cover_medium;
             ALBUMNAMES[i].innerText = albums[i].album.title;
             ALBUMARTISTS[i].innerText = albums[i].artist.name;
+          }
+
+          const ALBUMBUTTONS = document.getElementsByClassName("albumLinks");
+          for (let i = 0; i < ALBUMBUTTONS.length; i++) {
+            ALBUMBUTTONS[i].addEventListener("click", () => {
+              window.location.href =
+                "./album.html?q=" + albums[i].id.toString();
+            });
           }
         })
         .catch((err) => console.error(err));
