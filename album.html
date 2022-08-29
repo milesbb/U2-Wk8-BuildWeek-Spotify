@@ -64,7 +64,7 @@
       margin-top: 50px;
       background-color: rgb(66, 60, 72);
       padding-top: 5px;
-      position: absolute;
+      position: fixed;
     }
     footer .first-div {
       display: flex;
@@ -128,7 +128,7 @@
                 <!--logo-->
                 <div class="logo my-3 mx-2 mt-3">
                     <i class="bi bi-spotify spotify-icon"></i>
-                    <span class="spotify-text vertical-align-middle ">Spotify</span>
+                    <span class="spotify-text vertical-align-middle">Spotify</span>
                 </div>
                 <!--/logo-->
                 <!--section-->
@@ -154,15 +154,21 @@
                         <span class="position-absolute font-weight-bold" style="left:40px; top:4px; font-size: 12px;">Liked songs</span>
                     </div>
                     <hr>
-                    <section class="side-playlists">
-                        <div class="container">
+                    <!-- <section class="side-playlists" style="background-color: black;">
+                        <div class="container" >
                             <div class="row">
                                 <div class="col-12" id="favourites">
-                                <!--container for favorite songs-->
+                                  <ul class="list-group list-group-flush" >
+                                    <li class="list-group-item">Funky Heavy Bluesy</li>
+                                    <li class="list-group-item">Your To Songs 2020</li>
+                                    <li class="list-group-item">In Love With You/li>
+                                    <li class="list-group-item">Pallegio</li>
+                                    <li class="list-group-item">This is Open</li>
+                                  </ul>
                                 </div>
                             </div>
                         </div>
-                    </section>
+                    </section> -->
                 </div>
             </div>
             <!--section n.2/-->
@@ -186,32 +192,184 @@
                         </div>
                     </nav>
                </div>
+
                <!--Good morning section-->
-               <div class="mb-5"><h3>Good morning</h3></div>
+               <div class="mb-3 pl-2"><h3>Good morning</h3></div>
                 <section>
-                    <div class="container mb-3">
-                        <div class="row" id="menu">
-                          <div class="card mb-3 overflow-hidden" style="width: 280px; height: 70px; background-color: #c9c9c91c; ">
-                            <div class="row no-gutters">
-                              <div class="col-md-3">
-                                <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" 
-                                class="img-fluid" alt="..." style="width: 70px; height: 70px;"
-                                >
-                              </div>
-                              <div class="col-md-9">
-                                <div class="card-body mt-1">
-                                  <h5 class="card-title" style="font-size: 14px;">Card title</h5>
+                  <div class="d-flex flex-nowrap">
+                      <div class="order-3 p-2">
+                          <div class="container mb-3">
+                              <div class="row" id="menu">
+                                <div class="card mb-3 overflow-hidden" style="width: 256px; height: 60px; background-color: #c9c9c91c; ">
+                                  <div class="row no-gutters">
+                                    <div class="col-md-3">
+                                      <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="img-fluid" alt="..." style="width: 70px; height: 60px;">
+                                    </div>
+                                    <div class="col-md-9">
+                                      <div class="card-body mt-1">
+                                        <h5 class="card-title" style="font-size: 14px;">Card title</h5>
+                                      </div>
+                                    </div>
+                                  </div>
                                 </div>
                               </div>
-                            </div>
+                              <div class="row" id="menu">
+                                <div class="card mb-3 overflow-hidden" style="width: 256px; height: 60px; background-color: #c9c9c91c; ">
+                                  <div class="row no-gutters">
+                                    <div class="col-md-3">
+                                      <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="img-fluid" alt="..." style="width: 70px; height: 60px;">
+                                    </div>
+                                    <div class="col-md-9">
+                                      <div class="card-body mt-1">
+                                        <h5 class="card-title" style="font-size: 14px;">Card title</h5>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
                           </div>
-                          
-                        </div>
+                      </div>
+
+                      <div class="order-2 p-2">
+                          <div class="container mb-3">
+                              <div class="row" id="menu">
+                                <div class="card mb-3 overflow-hidden" style="width: 256px; height: 60px; background-color: #c9c9c91c; ">
+                                  <div class="row no-gutters">
+                                    <div class="col-md-3">
+                                      <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="img-fluid" alt="..." style="width: 70px; height: 60px;">
+                                    </div>
+                                    <div class="col-md-9">
+                                      <div class="card-body mt-1">
+                                        <h5 class="card-title" style="font-size: 14px;">Card title</h5>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row" id="menu">
+                                <div class="card mb-3 overflow-hidden" style="width: 256px; height: 60px; background-color: #c9c9c91c; ">
+                                  <div class="row no-gutters">
+                                    <div class="col-md-3">
+                                      <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="img-fluid" alt="..." style="width: 70px; height: 60px;">
+                                    </div>
+                                    <div class="col-md-9">
+                                      <div class="card-body mt-1">
+                                        <h5 class="card-title" style="font-size: 14px;">Card title</h5>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="order-3 p-2">
+                          <div class="container mb-3">
+                              <div class="row" id="menu">
+                                <div class="card mb-3 overflow-hidden" style="width: 256px; height: 60px; background-color: #c9c9c91c; ">
+                                  <div class="row no-gutters">
+                                    <div class="col-md-3">
+                                      <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="img-fluid" alt="..." style="width: 70px; height: 60px;">
+                                    </div>
+                                    <div class="col-md-9">
+                                      <div class="card-body mt-1">
+                                        <h5 class="card-title" style="font-size: 14px;">Card title</h5>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row" id="menu">
+                                <div class="card mb-3 overflow-hidden" style="width: 256px; height: 60px; background-color: #c9c9c91c; ">
+                                  <div class="row no-gutters">
+                                    <div class="col-md-3">
+                                      <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="img-fluid" alt="..." style="width: 70px; height: 60px;">
+                                    </div>
+                                    <div class="col-md-9">
+                                      <div class="card-body mt-1">
+                                        <h5 class="card-title" style="font-size: 14px;">Card title</h5>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="order-4 p-2">
+                          <div class="container mb-3">
+                              <div class="row" id="menu">
+                                <div class="card mb-3 overflow-hidden" style="width: 256px; height: 60px; background-color: #c9c9c91c; ">
+                                  <div class="row no-gutters">
+                                    <div class="col-md-3">
+                                      <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="img-fluid" alt="..." style="width: 70px; height: 60px;">
+                                    </div>
+                                    <div class="col-md-9">
+                                      <div class="card-body mt-1">
+                                        <h5 class="card-title" style="font-size: 14px;">Card title</h5>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row" id="menu">
+                                <div class="card mb-3 overflow-hidden" style="width: 256px; height: 60px; background-color: #c9c9c91c; ">
+                                  <div class="row no-gutters">
+                                    <div class="col-md-3">
+                                      <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="img-fluid" alt="..." style="width: 70px; height: 60px;">
+                                    </div>
+                                    <div class="col-md-9">
+                                      <div class="card-body mt-1">
+                                        <h5 class="card-title" style="font-size: 14px;">Card title</h5>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="order-5 p-2">
+                          <div class="container mb-3">
+                              <div class="row" id="menu">
+                                <div class="card mb-3 overflow-hidden" style="width: 256px; height: 60px; background-color: #c9c9c91c; ">
+                                  <div class="row no-gutters">
+                                    <div class="col-md-3">
+                                      <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="img-fluid" alt="..." style="width: 70px; height: 60px;">
+                                    </div>
+                                    <div class="col-md-9">
+                                      <div class="card-body mt-1">
+                                        <h5 class="card-title" style="font-size: 14px;">Card title</h5>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row" id="menu">
+                                <div class="card mb-3 overflow-hidden" style="width: 256px; height: 60px; background-color: #c9c9c91c; ">
+                                  <div class="row no-gutters">
+                                    <div class="col-md-3">
+                                      <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="img-fluid" alt="..." style="width: 70px; height: 60px;">
+                                    </div>
+                                    <div class="col-md-9">
+                                      <div class="card-body mt-1">
+                                        <h5 class="card-title" style="font-size: 14px;">Card title</h5>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                          </div>
+                      </div>
+
+
                     </div>
+
+                
                 </section>
               
                  <!--Recently viewed section-->
-                 <div class="mb-3"><h5>Recently played</h5></div>
+                 <div class="mb-3 pl-2"><h5>Recently played</h5></div>
                  <section>
                     <div class="container mb-3">
                       <div class="row" style="gap: 12px;" id="tryThis">
@@ -275,7 +433,7 @@
                   </section>
 
                   <!--Song to try to section-->
-                <div class="mb-3"><h5>Songs to try</h5></div>
+                <div class="mb-3 pl-2"><h5>Songs to try</h5></div>
                   <section>
                     <div class="container mb-3">
                         <div class="row" style="gap: 12px;" id="tryThis">
@@ -341,13 +499,78 @@
                   </section>
                   <!--/Song try to section-->
 
-                  <!-- <section>
+                  <div class="mb-3 pl-2"><h5>Songs of this week</h5></div>
+                  <section>
                     <div class="container mb-3">
-                        <div class="row" id="songsSearched">
+                        <div class="row" style="gap: 12px;" id="tryThis">
+                          <div class="card" style="width: 160px; height: 220px; background-color: #181818;">
+                            <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="card-img-top p-2" alt="...">
+                            <div class="card-body p-2 mb-2">
+                              <h5 class="card-title" style="color: rgb(255, 248, 248); font-size: 12px;">Card title</h5>
+                              <p class="card-text" style="color: rgb(255, 248, 248); font-size: 12px;">name</p>
+                            </div>
+                          </div>
+                          <div class="card" style="width: 160px; height: 220px; background-color: #181818;">
+                            <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="card-img-top p-2" alt="...">
+                            <div class="card-body p-2 mb-2">
+                              <h5 class="card-title" style="color: rgb(255, 248, 248); font-size: 12px;">Card title</h5>
+                              <p class="card-text" style="color: rgb(255, 248, 248); font-size: 12px;">name</p>
+                            </div>
+                          </div>
+                          <div class="card" style="width: 160px; height: 220px; background-color: #181818;">
+                            <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="card-img-top p-2" alt="...">
+                            <div class="card-body p-2 mb-2">
+                              <h5 class="card-title" style="color: rgb(255, 248, 248); font-size: 12px;">Card title</h5>
+                              <p class="card-text" style="color: rgb(255, 248, 248); font-size: 12px;">name</p>
+                            </div>
+                          </div>
+                          <div class="card" style="width: 160px; height: 220px; background-color: #181818;">
+                            <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="card-img-top p-2" alt="...">
+                            <div class="card-body p-2 mb-2">
+                              <h5 class="card-title" style="color: rgb(255, 248, 248); font-size: 12px;">Card title</h5>
+                              <p class="card-text" style="color: rgb(255, 248, 248); font-size: 12px;">name</p>
+                            </div>
+                          </div>
+                          <div class="card" style="width: 160px; height: 220px; background-color: #181818;">
+                            <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="card-img-top p-2" alt="...">
+                            <div class="card-body p-2 mb-2">
+                              <h5 class="card-title" style="color: rgb(255, 248, 248); font-size: 12px;">Card title</h5>
+                              <p class="card-text" style="color: rgb(255, 248, 248); font-size: 12px;">name</p>
+                            </div>
+                          </div>
+                          <div class="card" style="width: 160px; height: 220px; background-color: #181818;">
+                            <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="card-img-top p-2" alt="...">
+                            <div class="card-body p-2 mb-2">
+                              <h5 class="card-title" style="color: rgb(255, 248, 248); font-size: 12px;">Card title</h5>
+                              <p class="card-text" style="color: rgb(255, 248, 248); font-size: 12px;">name</p>
+                            </div>
+                          </div>
+                          <div class="card" style="width: 160px; height: 220px; background-color: #181818;">
+                            <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="card-img-top p-2" alt="...">
+                            <div class="card-body p-2 mb-2">
+                              <h5 class="card-title" style="color: rgb(255, 248, 248); font-size: 12px;">Card title</h5>
+                              <p class="card-text" style="color: rgb(255, 248, 248); font-size: 12px;">name</p>
+                            </div>
+                          </div>
+                          <div class="card" style="width: 160px; height: 220px; background-color: #181818;">
+                            <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="card-img-top p-2" alt="...">
+                            <div class="card-body p-2 mb-2">
+                              <h5 class="card-title" style="color: rgb(255, 248, 248); font-size: 12px;">Card title</h5>
+                              <p class="card-text" style="color: rgb(255, 248, 248); font-size: 12px;">name</p>
+                            </div>
+                          </div>
 
                         </div>
                     </div>
-                  </section> -->
+                  </section>
+
+                  <!-- <section>
+                    <div class="container mb-3">
+                        <div class="row" id="songsSearched">
+                         
+                        </div>
+                    </div>
+                  </section>  -->
             </div>   
         </div>
     </div>
