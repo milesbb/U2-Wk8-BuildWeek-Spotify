@@ -1,12 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <script>
+      const options = {
+        method: "GET",
+        headers: {
+          "X-RapidAPI-Key":
+            "955a238bedmshd7fff636958030ap1f1f55jsn858243bf16fa",
+          "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
+        },
+      };
+
+      fetch("https://deezerdevs-deezer.p.rapidapi.com/search?q=eminem", options)
+        .then((response) => response.json())
+        .then((response) => {
+          const albums = response.data;
+          console.log(albums);
+          const ALBUMIMAGES = document.getElementsByClassName("albumImages");
+          const ALBUMNAMES = document.getElementsByClassName("albumNames");
+          const ALBUMSARTISTS = document.getElementsByClassName("albumArtists");
+          for (let i = 0; i < ALBUMIMAGES.length; i++) {
+            ALBUMIMAGES[i].src = albums[i].album.cover_medium;
+            ALBUMNAMES[i].innerText = albums[i].album.title;
+            ALBUMARTISTS[i].innerText = albums[i].artist.name;
+          }
+        })
+        .catch((err) => console.error(err));
+    </script>
+  </body>
 </html>
