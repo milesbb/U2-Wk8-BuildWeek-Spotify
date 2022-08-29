@@ -1,12 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <script>
+      const loadAlbums = async (albumID) => {
+        const response = await fetch(
+          "https://striveschool-api.herokuapp.com/api/deezer/album/" + albumID,
+          {
+            headers: {
+              Authorization:
+                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzA3NmUyOTFlYjc2ZDAwMTUxNTAxODQiLCJpYXQiOjE2NjE0MzEzMzcsImV4cCI6MTY2MjY0MDkzN30.yVRsTSWKhu2WIrAbnKX_R0Fml1OgasMgaw02ueY0Q4E",
+            },
+          }
+        );
+
+        const data = await response.json();
+        const albums = data;
+        console.log(albums);
+
+        let albumIndex = albums.findIndex((item) => item["_id"] === albumID);
+        console.log("albumIndex: " + albumIndex);
+
+        const SONG_NAMES = document.getElementsByClassName("songName");
+        const SONG_DURATIONS = document.getElementsByClassName("songDuration");
+        const ALBUM_TITLE = document.getElementsByClassName("albumTitle")[0];
+        const ARTIST_NAME = document.getElementsByClassName("artistName")[0];
+        const ALBUM_DATE = document.getElementsByClassName("albumDate")[0];
+
+        // add code that sets values, need to test in postman to find specific locations of data in response object
+      };
+
+      const params = new URLSearchParams(window.location.search);
+      let albumId = params.get("q");
+      console.log(albumId);
+
+      loadAlbums(albumId);
+    </script>
+  </body>
 </html>
