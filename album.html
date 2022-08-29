@@ -4,9 +4,80 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./styles.css"/>
+    <title>Album Page</title>
 </head>
-<body>
+<body style="background-color:rgb(61, 56, 56)">
+    <div class="container">
+        <div class="row mt-0">
+            <div class="col-2 " style="height:1000px;background-color:black;">
+                <div class="d-flex col-sm-3 ">
+                   <img class="border-round mt-3 " src="data:image/png;base64,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" style="width:40px;height:40px;object-fit:contain;border-radius: 50%;">
+                   <h1 class="text-white mt-4 pl-2 " style="font-size:27px; font-family:Arial Narrow, sans-serif;">Spotify</h1>
+                </div>
+        
+                <div class="text-white d-flex mt-2 ml-1 col-sm-3"  >
+                    <i class="bi bi-house-door-fill" style="font-size:20px;"></i>
+                    <h4 class=" pl-3" style="font-size:12px; margin-top:10px">Home</h4>
+                </div>
+
+                <div class="text-white d-flex mt-2 ml-1 col-sm-3"  >
+                    <i class="bi bi-search" style="font-size:20px;"></i>
+                    <h4 class=" pl-3" style="font-size:12px; margin-top:10px">Search</h4>
+                </div>
+
+                <div class="text-white d-flex mt-2 ml-1 col-sm-12"  >
+                    <i style="font-size:20px;">||\</i>
+                    <h4 class=" pl-3" style="font-size:12px; margin-top:10px">Your Library</h4>
+                </div>
+
+                <div class="text-white d-flex pl-3 mt-5 ml-1"  >
+                    <h1 class="text-center " style="border:1px solid;background-color:rgb(224, 212, 212);  color:black; height: 25px; width:25px;font-size:18px;">+</h1>
+                    <h4 class=" pl-3 pt-1" style="font-size:14px; ">Create PlayList</h4>
+                </div>
+
+                <div class="text-white d-flex mt-2 ml-1 col-sm-12"  >
+                    <i class="bi bi-suit-heart-fill text-center" style="border:1px solid transparent; background-color:rgb(113, 113, 211); height: 25px; width:25px;font-size:15px;"></i>
+                    <h4 class=" pl-3" style="font-size:15px; margin-top:5px">Liked Songs</h4>                 
+                </div>
+                
+                <div >
+                    <hr style="color:white;"/>
+                </div>
+
+               
+            </div>
+
+            <div class="col-10 " style="background-color:rgb(182, 61, 127);height: 200px;">
+                <button> < </button>
+                <button> > </button>
+            </div>
+
+           
+        </div>
+    </div>
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 </body>
 </html>
