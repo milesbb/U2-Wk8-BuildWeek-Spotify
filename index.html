@@ -111,13 +111,34 @@
       border: none;
     }
 
+    .toWhite {
+        color: rgb(92, 92, 92);
+    }
+
     .toWhite:hover {
         color: white;
     }
 
-  
+    .greyToWhite {
+        color: gray;
+        transition: color 0.3s ease-in-out;
+    }
 
+    .greyToWhite:hover {
+        color: white;
+    }
 
+    /* .searchInputBar {
+        display: none;
+    }
+/*  */
+    /* .openSearch:hover + .searchInputBar {
+        display: flex;
+    }
+
+    .openSearch:hover {
+        display: none;
+    } */
 
 
     </style>
@@ -135,29 +156,31 @@
                 <!--/logo-->
                 <!--section-->
                 <div class="left-section ml-2 mt-4">
-                    <div class="left-menu mb-2 position-relative">
+                    <div class="greyToWhite left-menu mb-2 position-relative">
                         <i class="bi bi-house-door side-icons"></i>
                         <span class="position-absolute font-weight-bold" style="left:40px; top:8px; font-size: 12px;">Home</span>
                     </div>
-                    <div class="left-menu mb-2 search-div position-relative">
-                        <!-- <i class="bi bi-search side-icons"></i>
-                            <span class="position-absolute font-weight-bold" style="left:40px; top:8px; font-size: 12px;">Search</span> -->
-                            <div class="input-group mb-3">
-                                <input id="searchBar" type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
-                                <div class="input-group-append">
-                                  <button class="btn btn-outline-secondary" type="button">Go</button>
-                                </div>
-                              </div>
+                    <div class="openSearch greyToWhite left-menu mb-2 search-div position-relative">
+                        <i class="bi bi-search side-icons"></i>
+                            <span class="position-absolute font-weight-bold" style="left:40px; top:8px; font-size: 12px;">Search</span>
+                            
                     </div>
-                    <div class="left-menu mb-3 position-relative">
+                    <div class="searchInputBar d-none greyToWhite input-group mb-3">
+                        <input id="searchBar" type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                          <button class="btn btn-outline-secondary" type="button">Go</button>
+                        </div>
+                      </div>
+                    <div class="greyToWhite left-menu mb-3 position-relative">
                         <i class="bi bi-collection side-icons"></i>
                         <span class="position-absolute font-weight-bold" style="left:40px; top:8px; font-size: 12px;">Your Library</span>
                     </div>
-                    <div class="left-menu mb-3 position-relative">
+                    <br>
+                    <div class="greyToWhite left-menu mb-3 position-relative">
                         <i class="bi bi-plus-square-fill"></i>
                         <span class="position-absolute font-weight-bold" style="left:40px; top:4px; font-size: 12px;">Create Playlist</span>
                     </div>
-                    <div class="left-menu mb-4 position-relative">
+                    <div class="greyToWhite left-menu mb-4 position-relative">
                         <i class="bi bi-bookmark-heart-fill"></i>
                         <span class="position-absolute font-weight-bold" style="left:40px; top:4px; font-size: 12px;">Liked songs</span>
                     </div>
@@ -166,23 +189,23 @@
                         <div class="container" >
                             <div class="row">
                                   <ul class="list" style="list-style-type:none; margin-left:-35px" >
-                                    <li class="item mb-2 toWhite" style="font-size: 12px;color: rgb(92, 92, 92); cursor: pointer;">Funky Heavy Bluesy</li>
-                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); cursor: pointer; ">Your To Songs 2020</li>
-                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); cursor: pointer; ">In Love With You</li>
-                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); cursor: pointer; ">This Is Rod Stewart</li>
-                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); cursor: pointer; ">FRANCHISE ft.Young</li>
-                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); cursor: pointer; ">Your Top Songs 2019</li>
-                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); cursor: pointer; ">Your Top Songs 2020</li>
-                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); cursor: pointer; ">Pallegio</li>
-                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); cursor: pointer; ">This Is Joe Bonamassa</li>
-                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); cursor: pointer; ">Jun19</li>
-                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); cursor: pointer; ">Jack 30th Party 2</li>
-                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); cursor: pointer; ">Jack 30th Party </li>
-                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); cursor: pointer; ">This Is Opeth</li>
-                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); cursor: pointer; ">Metal Ballads</li>
-                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); cursor: pointer; ">New Playlist</li>
-                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); cursor: pointer; ">Your Top Songs 2018</li>
-                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); cursor: pointer; ">Jazz Classics</li>
+                                    <li class="item mb-2 toWhite" style="font-size: 12px; cursor: pointer;">Funky Heavy Bluesy</li>
+                                    <li class="item mb-2 toWhite" style="font-size: 12px; cursor: pointer; ">Your To Songs 2020</li>
+                                    <li class="item mb-2 toWhite" style="font-size: 12px; cursor: pointer; ">In Love With You</li>
+                                    <li class="item mb-2 toWhite" style="font-size: 12px; cursor: pointer; ">This Is Rod Stewart</li>
+                                    <li class="item mb-2 toWhite" style="font-size: 12px; cursor: pointer; ">FRANCHISE ft.Young</li>
+                                    <li class="item mb-2 toWhite" style="font-size: 12px; cursor: pointer; ">Your Top Songs 2019</li>
+                                    <li class="item mb-2 toWhite" style="font-size: 12px; cursor: pointer; ">Your Top Songs 2020</li>
+                                    <li class="item mb-2 toWhite" style="font-size: 12px; cursor: pointer; ">Pallegio</li>
+                                    <li class="item mb-2 toWhite" style="font-size: 12px; cursor: pointer; ">This Is Joe Bonamassa</li>
+                                    <li class="item mb-2 toWhite" style="font-size: 12px; cursor: pointer; ">Jun19</li>
+                                    <li class="item mb-2 toWhite" style="font-size: 12px; cursor: pointer; ">Jack 30th Party 2</li>
+                                    <li class="item mb-2 toWhite" style="font-size: 12px; cursor: pointer; ">Jack 30th Party </li>
+                                    <li class="item mb-2 toWhite" style="font-size: 12px; cursor: pointer; ">This Is Opeth</li>
+                                    <li class="item mb-2 toWhite" style="font-size: 12px; cursor: pointer; ">Metal Ballads</li>
+                                    <li class="item mb-2 toWhite" style="font-size: 12px; cursor: pointer; ">New Playlist</li>
+                                    <li class="item mb-2 toWhite" style="font-size: 12px; cursor: pointer; ">Your Top Songs 2018</li>
+                                    <li class="item mb-2 toWhite" style="font-size: 12px; cursor: pointer; ">Jazz Classics</li>
                                     <li class="item mb-2 font-weight-bold" style="font-size: 12px;color: rgb(212, 211, 211); ">
                                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-circle mr-1" viewBox="0 0 16 16">
                                         <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/>
@@ -783,6 +806,14 @@
         }
       })
       .catch((err) => console.error(err));
+
+      const SEARCH_CLICK = document.getElementsByClassName("openSearch")[0];
+      const INPUT_BAR = document.getElementsByClassName("searchInputBar")[0];
+
+      SEARCH_CLICK.addEventListener("click", () => {
+        INPUT_BAR.classList.toggle("d-none");
+        SEARCH_CLICK.classList.toggle("d-none");
+      })
   </script>
     
 
