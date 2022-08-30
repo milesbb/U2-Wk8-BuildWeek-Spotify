@@ -641,6 +641,44 @@
 
      
   </footer>
+
+  <script>
+    const options = {
+      method: "GET",
+      headers: {
+        "X-RapidAPI-Key":
+          "955a238bedmshd7fff636958030ap1f1f55jsn858243bf16fa",
+        "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
+      },
+    };
+
+    fetch(
+      "https://striveschool-api.herokuapp.com/api/deezer/search?q=eminem",
+      options
+    )
+      .then((response) => response.json())
+      .then((response) => {
+        const albums = response.data;
+        console.log(albums);
+        const ALBUMIMAGES = document.getElementsByClassName("albumImages");
+        const ALBUMNAMES = document.getElementsByClassName("albumNames");
+        const ALBUMSARTISTS = document.getElementsByClassName("albumArtists");
+        for (let i = 0; i < ALBUMIMAGES.length; i++) {
+          ALBUMIMAGES[i].src = albums[i].album.cover_medium;
+          ALBUMNAMES[i].innerText = albums[i].album.title;
+          ALBUMARTISTS[i].innerText = albums[i].artist.name;
+        }
+
+        const ALBUMBUTTONS = document.getElementsByClassName("albumLinks");
+        for (let i = 0; i < ALBUMBUTTONS.length; i++) {
+          ALBUMBUTTONS[i].addEventListener("click", () => {
+            window.location.href =
+              "./album.html?q=" + albums[i].id.toString();
+          });
+        }
+      })
+      .catch((err) => console.error(err));
+  </script>
     
 
     <!-- Optional JavaScript; choose one of the two! -->
