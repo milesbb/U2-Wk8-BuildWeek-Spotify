@@ -1,0 +1,77 @@
+hr{
+display: block;
+border:1px solid grey;
+}
+
+/* i:hover{
+    cursor: pointer;
+} */
+
+h6{
+    position: relative;
+    display:block;
+    overflow:hidden;
+    font-size:13px;
+    color:rgb(189, 182, 182);
+}
+
+.bgHover:hover {
+    background-color:grey;
+    cursor: pointer;
+   
+}
+.bgHover > h4:hover{
+    font-size:15px;
+}
+
+
+button{
+    width:30px;
+    height:28px;
+    border:1px solid transparent;
+    border-radius:50%;
+    background-color:rgb(75, 30, 55);
+    margin-top:10px;
+    margin-left:10px;
+    font-size:15px;
+    font-weight: 300;
+    color:#fff;
+    text-align:center;
+    padding-top:0px
+}
+
+button:hover{
+    background-color:black;
+}
+
+.exampleImg{
+    padding-left:-20px;
+}
+.exampleImg img{
+    position: relative;
+    margin-top: 50px;
+    left:0%;
+    width: 160px;
+    height:156px;
+    object-fit: contain;
+    box-shadow:0px 0px 30px rgb(206, 46, 134);
+    border-radius:7px;
+}
+
+.exampleImg h5{
+    position:absolute;
+    display:block;
+    top:54%;
+    font-weight:800;
+    font-size:12px;
+    padding-left:3%;
+}
+
+.exampleImg p{
+    position:absolute;
+    display:block;
+    top:58%;
+    font-weight:800;
+    font-size:25px;
+    padding-left:3%;
+}
