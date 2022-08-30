@@ -8,5 +8,30 @@
 </head>
 <body>
     
+    <script>
+       const params = new URLSearchParams(window.location.search)
+       const query = params.get('q')
+
+       const BASE_URL = ("https://striveschool-api.herokuapp.com/api/deezer/album/" + query)
+       const headers = {
+                method: "GET",
+                headers: {
+                    "X-RapidAPI-Key":
+                    "955a238bedmshd7fff636958030ap1f1f55jsn858243bf16fa",
+                    "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
+       }};
+
+       const postAlbum = () => {
+           fetch(BASE_URL, headers)
+           .then ((response) => response.json())
+           .then ((data) => {
+           console.log(data)
+           })
+
+           .catch ((error) => console.error("This is an error", error) )
+       }
+
+
+    </script>
 </body>
 </html>
