@@ -752,7 +752,19 @@ if (user) {
           ALBUMSARTISTS[i].innerText = albums[i].artist.name;
         }
 
-        const ALBUMBUTTONS = document.getElementsByClassName("albumLinks2");
+        for(let i=0;i<ALBUMSARTISTS.length;i++){
+          ALBUMSARTISTS[i].addEventListener("click",()=>{
+            if (isLoggedIn) {
+                window.location.href =
+              "./artist.html?q=" + albums[i].artist.id.toString() + "&u=" + user;
+            } else {
+                window.location.href =
+              "./artist.html?q=" + albums[i].artist.id.toString();
+            }
+          })
+        }
+
+        const ALBUMBUTTONS = document.getElementsByClassName("albumImages2");
         for (let i = 0; i < ALBUMBUTTONS.length; i++) {
           ALBUMBUTTONS[i].addEventListener("click", () => {
             if (isLoggedIn) {
@@ -785,7 +797,19 @@ if (user) {
           ALBUMSARTISTS[i].innerText = albums[i].artist.name;
         }
 
-        const ALBUMBUTTONS = document.getElementsByClassName("albumLinks3");
+        for(let i=0;i<ALBUMSARTISTS.length;i++){
+          ALBUMSARTISTS[i].addEventListener("click",()=>{
+            if (isLoggedIn) {
+                window.location.href =
+              "./artist.html?q=" + albums[i].artist.id.toString() + "&u=" + user;
+            } else {
+                window.location.href =
+              "./artist.html?q=" + albums[i].artist.id.toString();
+            }
+          })
+        }
+
+        const ALBUMBUTTONS = document.getElementsByClassName("albumImages3");
         for (let i = 0; i < ALBUMBUTTONS.length; i++) {
           ALBUMBUTTONS[i].addEventListener("click", () => {
             if (isLoggedIn) {
@@ -818,7 +842,19 @@ if (user) {
           ALBUMSARTISTS[i].innerText = albums[i].artist.name;
         }
 
-        const ALBUMBUTTONS = document.getElementsByClassName("albumLinks4");
+        for(let i=0;i<ALBUMSARTISTS.length;i++){
+          ALBUMSARTISTS[i].addEventListener("click",()=>{
+            if (isLoggedIn) {
+                window.location.href =
+              "./artist.html?q=" + albums[i].artist.id.toString() + "&u=" + user;
+            } else {
+                window.location.href =
+              "./artist.html?q=" + albums[i].artist.id.toString();
+            }
+          })
+        }
+
+        const ALBUMBUTTONS = document.getElementsByClassName("albumImages4");
         for (let i = 0; i < ALBUMBUTTONS.length; i++) {
           ALBUMBUTTONS[i].addEventListener("click", () => {
             if (isLoggedIn) {
@@ -840,6 +876,9 @@ if (user) {
         INPUT_BAR.classList.toggle("d-none");
         SEARCH_CLICK.classList.toggle("d-none");
       })
+
+
+
 
     
 </script>
