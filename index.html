@@ -1007,6 +1007,40 @@
   </footer>
 
   <script>
+    let isLoggedIn = false;
+    const LOGIN_BUTTON_HOMEPAGE = document.getElementById("loginButtonHomepage");
+
+LOGIN_BUTTON_HOMEPAGE.addEventListener("click", () => {
+    window.location.href = './login.html';
+})
+
+const params = new URLSearchParams(window.location.search)
+const user = params.get('u')
+console.log("User: " + user)
+const LOGIN_USER_DIV = document.getElementById("loginUserDiv");
+
+const setUser = (username) => {
+    LOGIN_USER_DIV.innerHTML = `
+    <div class="dropdown mr-5">
+  <button class="userDiv btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+    <i class="bi bi-person-circle px-0 mr-2"></i>
+    ${username}
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item text-white" href="index.html">Sign Out</a>
+  </div>
+</div>
+    `
+}
+
+if (user) {
+    isLoggedIn = true;
+    LOGIN_USER_DIV.innerHTML = "";
+    setUser(user);
+}
+
+
+
     const options = {
       method: "GET",
       headers: {
@@ -1037,8 +1071,13 @@
         const ALBUMBUTTONS = document.getElementsByClassName("albumLinks");
         for (let i = 0; i < ALBUMBUTTONS.length; i++) {
           ALBUMBUTTONS[i].addEventListener("click", () => {
-            window.location.href =
+            if (isLoggedIn) {
+                window.location.href =
+              "./album.html?q=" + albums[i].album.id.toString() + "&u=" + user;
+            } else {
+                window.location.href =
               "./album.html?q=" + albums[i].album.id.toString();
+            }
           });
         }
       })
@@ -1065,8 +1104,13 @@
         const ALBUMBUTTONS = document.getElementsByClassName("albumLinks2");
         for (let i = 0; i < ALBUMBUTTONS.length; i++) {
           ALBUMBUTTONS[i].addEventListener("click", () => {
-            window.location.href =
+            if (isLoggedIn) {
+                window.location.href =
+              "./album.html?q=" + albums[i].album.id.toString() + "&u=" + user;
+            } else {
+                window.location.href =
               "./album.html?q=" + albums[i].album.id.toString();
+            }
           });
         }
       })
@@ -1093,8 +1137,13 @@
         const ALBUMBUTTONS = document.getElementsByClassName("albumLinks3");
         for (let i = 0; i < ALBUMBUTTONS.length; i++) {
           ALBUMBUTTONS[i].addEventListener("click", () => {
-            window.location.href =
+            if (isLoggedIn) {
+                window.location.href =
+              "./album.html?q=" + albums[i].album.id.toString() + "&u=" + user;
+            } else {
+                window.location.href =
               "./album.html?q=" + albums[i].album.id.toString();
+            }
           });
         }
       })
@@ -1121,8 +1170,13 @@
         const ALBUMBUTTONS = document.getElementsByClassName("albumLinks4");
         for (let i = 0; i < ALBUMBUTTONS.length; i++) {
           ALBUMBUTTONS[i].addEventListener("click", () => {
-            window.location.href =
+            if (isLoggedIn) {
+                window.location.href =
+              "./album.html?q=" + albums[i].album.id.toString() + "&u=" + user;
+            } else {
+                window.location.href =
               "./album.html?q=" + albums[i].album.id.toString();
+            }
           });
         }
       })
@@ -1135,7 +1189,9 @@
         INPUT_BAR.classList.toggle("d-none");
         SEARCH_CLICK.classList.toggle("d-none");
       })
-  </script>
+
+    
+</script>
     
 
     <!-- Optional JavaScript; choose one of the two! -->
