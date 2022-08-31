@@ -436,9 +436,9 @@ HOME_BUTTON.addEventListener("click", () => {
                                          <div class="d-flex flex-column">
                                             <p style="font-size:10px; margin-bottom:2px;">ALBUM</p>
                                             <h1>${data.title}</h1>
-                                            <div>
-                                                <p style="font-size:10px"><strong>
-                                                <img class="mr-2" src="${data.cover_small}" alt=""
+                                            <div onclick="window.location.href='artist.html?q=${data.artist.id}'">
+                                                <p  style="font-size:10px"><strong>
+                                                <img class="mr-2 artistLink" src="${data.cover_small}" alt=""
                                                 style="border-radius: 2rem; height: 20px;"
                                                 alt="Original Album Cover"/>${data.artist.name} • </strong>
                                                 ${new Date(data.release_date).getFullYear()} 
@@ -465,14 +465,30 @@ HOME_BUTTON.addEventListener("click", () => {
                                                     <div style="line-height:14px;">
                                                         <span style="font-size:13px;">
                                                         ${singleTrack.title}</span><br>
-                                                        <span style="font-size:11px; color:#d3d3d3">
-                                                        ${data.artist.name}</span>
+                                                        <a class="artistLink" href="artist.html?q=${data.artist.id}" style="font-size:11px; color:#d3d3d3">
+                                                        ${data.artist.name}</a>
                                                     </div>
                                                 </div>
                                                 <div class="time ml-auto mt-2 pr-4 bd-highlight" style="font-size:12px; color:#d3d3d3">${MINUTESANDSECONDS(singleTrack.duration)}</div>
                                             </div>
-                                           `        
-            ;}})
+                                           `   
+                                   
+
+                                           
+            ;}
+            // const ARTIST_LINKS = document.getElementsByClassName("artistLink")
+            //                                for (let i=0;i<ARTIST_LINKS.length;i++){
+            //                                 ARTIST_LINKS[i].addEventListener("click",()=>{
+            //                                   if (isLoggedIn) {
+            //                                       window.location.href =
+            //                                     "./artist.html?q=" + data[i].artist.id.toString() + "&u=" + user;
+            //                                   } else {
+            //                                       window.location.href =
+            //                                     "./artist.html?q=" + data[i].artist.id.toString();
+            //                                   }
+            //                             })
+            //                                }
+          })
 
            .catch((err) => console.log(err));
            
