@@ -267,7 +267,7 @@
                     <div class="searchInputBar d-none greyToWhite input-group mb-3">
                         <input id="searchBar" type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
                         <div class="input-group-append">
-                          <button class="btn btn-outline-secondary" type="button">Go</button>
+                          <button id="searchButton" class="btn btn-outline-secondary" type="button">Go</button>
                         </div>
                       </div>
                     <div class="greyToWhite left-menu mb-3 position-relative">
@@ -475,6 +475,40 @@
                               </div>
                           </div>
                       </div>
+
+                      <div class="order-4 p-2">
+                        <div class="container mb-3">
+                            <div class="row" id="menu">
+                              <div class="card mb-3 overflow-hidden albumLinks" style="width: 256px; cursor: pointer; height: 60px; background-color: #c9c9c91c; ">
+                                <div class="row no-gutters">
+                                  <div class="col-md-3">
+                                    <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="img-fluid albumImages" alt="..." style="width: 70px; height: 60px;">
+                                  </div>
+                                  <div class="col-md-9">
+                                    <div class="card-body">
+                                      <h5 class="card-title albumNames text-album" >Card title</h5>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row" id="menu">
+                              <div class="card mb-3 overflow-hidden albumLinks" style="width: 256px; cursor: pointer; height: 60px; background-color: #c9c9c91c; ">
+                                <div class="row no-gutters">
+                                  <div class="col-md-3">
+                                    <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="img-fluid albumImages" alt="..." style="width: 70px; height: 60px;">
+                                  </div>
+                                  <div class="col-md-9">
+                                    <div class="card-body">
+                                      <h5 class="card-title albumNames text-album" >Card title</h5>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+
 
                       
 
@@ -1195,12 +1229,34 @@ if (user) {
 
       const SEARCH_CLICK = document.getElementsByClassName("openSearch")[0];
       const INPUT_BAR = document.getElementsByClassName("searchInputBar")[0];
+      const INPUT_TEXT = document.getElementById("searchBar");
+      const INPUT_BUTTON = document.getElementById("searchButton");
 
       SEARCH_CLICK.addEventListener("click", () => {
         INPUT_BAR.classList.toggle("d-none");
         SEARCH_CLICK.classList.toggle("d-none");
       })
 
+      INPUT_BUTTON.addEventListener("click", () => {
+        searchArtist(INPUT_TEXT.value)
+      })
+
+      const searchArtist = (query) => {
+        // OPZIONE 1: Pagina di ricerca separata
+        window.location.href =
+              "./search.html?q=" + query + "&u=" + user;
+
+        // OPZIONE 2: Cambiare contenuto home page
+        fetch(
+          "https://striveschool-api.herokuapp.com/api/deezer/search?q=" + query,
+          options
+        )
+          .then((response) => response.json())
+          .then((response) => {
+            // ....
+          })
+          .catch((err) => console.error(err));
+      }
     
 </script>
     
