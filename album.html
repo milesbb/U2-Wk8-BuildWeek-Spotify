@@ -1,12 +1,527 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css" />
+    <title>Spotify | Album</title>
+    <style>
+    body {
+      color: white;
+      background: rgb(0,0,0);
+      background: linear-gradient(0deg, rgba(0,0,0,0.5228685224089635) 0%, rgba(17,17,17,1) 0%, rgba(92,30,89,1) 100%);
+      animation: 3s ease-out 0s 1 fadedOpacity;
+      overscroll-behavior: none;
+    }
+    @keyframes fadedOpacity {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    .container {
+      max-width: 100%;
+      margin: 0, auto;
+    }
+    .first-section {
+      background-color: black;
+    }
+    /*.arrow-icons {
+      font-size: 20px;
+    }
+    */
+    .side-icons {
+      font-size: 20px;
+    } 
+    .arrow-icons {
+      font-size: 20px;
+    }
+    .spotify-icon {
+      font-size: 35px;
+      position: absolute;
+    }
+    .spotify-text {
+      font-size: 22px;
+      position: relative;
+      left: 40px;
+      top: 10px;
+    }
+    hr {
+      border-top: 0.25px solid rgb(197, 196, 196);
+    }
+    footer {
+      display: flex;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      justify-content: space-between;
+      margin-top: 50px;
+      background-color: rgb(66, 60, 72);
+      padding-top: 5px;
+      position: fixed;
+    }
+    footer .first-div {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-left: 15px;
+    }
+    .second-div .second-of-second {
+      display: flex;
+      text-align: center;
+      margin-top: 8px;
+      gap: 12px;
+      min-width: 380px;
+      position: relative;
+      right: 88px;
+    }
+    footer span {
+      font-size: 11pt;
+    }
+    .third-div {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-right: 15px;
+    }
+    .second-div .first-of-second {
+      display: flex;
+      gap: 25px;
+      margin-top: 5px;
+    }
+    .second-div .second-of-second hr {
+      position: relative;
+      bottom: 5px;
+    }
+  
+    #id-album-played {
+      margin: 0;
+     
+    }
     
+    .search-btn {
+      color: white;
+      background-color: inherit;
+      border: none;
+    }
+
+    .userDiv {
+        border-radius: 2rem;
+        background-color: #1f1f1e;
+    }
+
+    .dropdown-menu {
+        background-color: black;
+    }
+
+    .dropdown-item:hover {
+        background-color: #1f1f1e;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <div class="row">
+            <!--first section-->
+            <div class="first-section d-none d-sm-none d-md-block d-lg-block col-md-2 sidebar">
+                <!--logo-->
+                <div class="logo my-3 mx-2 mt-3">
+                    <i class="bi bi-spotify spotify-icon"></i>
+                    <span class="spotify-text vertical-align-middle">Spotify</span>
+                </div>
+                <!--/logo-->
+                <!--section-->
+                <div class="left-section ml-2 mt-4">
+                    <div class="left-menu mb-2 position-relative">
+                        <i class="bi bi-house-door side-icons"></i>
+                        <span class="position-absolute font-weight-bold" id="home" style="left:40px; top:8px; font-size: 12px; cursor: pointer;">Home</span>
+                    </div>
+                    <div class="left-menu mb-2 search-div position-relative">
+                        <i class="bi bi-search side-icons"></i>
+                            <span class="position-absolute font-weight-bold" style="left:40px; top:8px; font-size: 12px; cursor: pointer;">Search</span>
+                    </div>
+                    <div class="left-menu mb-3 position-relative">
+                        <i class="bi bi-collection side-icons"></i>
+                        <span class="position-absolute font-weight-bold" style="left:40px; top:8px; font-size: 12px; cursor: pointer;">Your Library</span>
+                    </div>
+                    <div class="left-menu mb-3 position-relative">
+                        <i class="bi bi-plus-square-fill"></i>
+                        <span class="position-absolute font-weight-bold" style="left:40px; top:4px; font-size: 12px; cursor: pointer;">Create Playlist</span>
+                    </div>
+                    <div class="left-menu mb-4 position-relative">
+                        <i class="bi bi-bookmark-heart-fill"></i>
+                        <span class="position-absolute font-weight-bold" style="left:40px; top:4px; font-size: 12px; cursor: pointer;">Liked songs</span>
+                    </div>
+                    <hr>
+                    <section class="side-playlists" style="background-color: rgb(0, 0, 0);">
+                        <div class="container" >
+                            <div class="row">
+                                  <ul class="list" style="list-style-type:none; margin-left:-35px" >
+                                    <li class="item mb-2 " style="font-size: 12px;color: rgb(92, 92, 92); cursor: pointer;">Funky Heavy Bluesy</li>
+                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); cursor: pointer; ">Your To Songs 2020</li>
+                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); cursor: pointer; ">In Love With You</li>
+                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); cursor: pointer; ">This Is Rod Stewart</li>
+                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); cursor: pointer; ">FRANCHISE ft.Young</li>
+                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); cursor: pointer; ">Your Top Songs 2019</li>
+                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); cursor: pointer; ">Your Top Songs 2020</li>
+                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); cursor: pointer; ">Pallegio</li>
+                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); cursor: pointer; ">This Is Joe Bonamassa</li>
+                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); cursor: pointer; ">Jun19</li>
+                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); cursor: pointer; ">Jack 30th Party 2</li>
+                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); cursor: pointer; ">Jack 30th Party </li>
+                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); cursor: pointer; ">This Is Opeth</li>
+                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); cursor: pointer; ">Metal Ballads</li>
+                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); cursor: pointer; ">New Playlist</li>
+                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); cursor: pointer; ">Your Top Songs 2018</li>
+                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); cursor: pointer; ">Jazz Classics</li>
+                                    <li class="item mb-2 font-weight-bold" style="font-size: 12px;color: rgb(212, 211, 211); ">
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-circle mr-1" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/>
+                                      </svg> 
+                                      Install App
+                                  </ul>
+                                
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <!--section n.2/-->
+            <div class="col-10 p-0">
+               <!--navbar-->
+               <div class="top-nav">
+                    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <i class="bi bi-arrow-left-circle arrow-icons mr-2"></i>
+                                <i class="bi bi-arrow-right-circle arrow-icons"></i>
+                            </ul>
+                            <div id="loginUserDiv">
+                                <button id="loginButtonHomepage" class="btn btn-outline-light mr-3 rounded-pill">
+                                        Login
+                                </button>
+                                <button class="btn btn-outline-light my-2 rounded-pill" onclick="window.location.href = 'signup.html'">
+                                        Sign Up
+                                </button>
+                        </div>
+                        </div>
+                    </nav>
+               </div>
+
+               <!--NEW section-->
+    
+                <main class="col-12 wrapper mt-4 p-0">
+
+                    <section id="album-title">
+                        <div class="container-fluid album-container">
+                            <div class="d-flex justify-content-start ml-2">
+                                <!--image cover-->
+                                <div class="image-cover">
+                               
+                                </div>
+                                 <!--Title-->
+                                <div class="col-md-8 col-lg-8 col-xl-8 mt-5 pt-5 title-section">
+
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+    
+    
+                    <section id="play-button " style="background-color: rgba(20, 20, 20, 0.38);">
+
+                        <div class="container-fluid mt-3">
+                            <div class="row">
+                                <div class="mt-3 ml-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="#1bb954" class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+                                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z"/>
+                                      </svg>
+                                </div>
+    
+                                <div class="mt-4 ml-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="30" fill="#9c9c9c" class="bi bi-heart" viewBox="0 0 16 16">
+                                        <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
+                                    </svg>
+                                </div>
+    
+                                <div class="mt-4 ml-4 ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="#9c9c9c" class="bi bi-three-dots" viewBox="0 0 16 16">
+                                        <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+                                      </svg>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="container-fluid mt-4">
+                            <div class="row">
+                                <div id="table-info" class="col-12 justify-content-start">
+                                    <div class=" d-flex bd-highlight">
+                                        <div class="number pl-3 bd-highlight text-monospace" style="font-size:13px; color:#d3d3d3">#</div>
+                                        <div class="title-artist pl-3 bd-highlight">
+                                            <div style="font-size: 11px;">
+                                               TITLE
+                                            </div>
+                                        </div>
+                                        <div class="time ml-auto mb-2 pr-4 bd-highlight" style="font-size:12px; color:#d3d3d3">  
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                                            <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                                            <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+                                        </svg>
+                                        </div>
+                                    </div>
+                                    <hr class="mt-1"style="border: 0.25px solid rgba(137, 137, 137, 0.578);">
+                                </div>
+                             </div>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="pt-5 mt-5">
+      
+                        </div>
+                    </section>
+                </main>
+            </div>
+    
+        </div>
+        
+    </div>
+
+    <footer style="background-color: #181818;">
+       <!--First div-->
+      <div class="first-div">
+          <img src="https://cdns-images.dzcdn.net/images/cover/9a20f8b2547cbb74635539c219de3a84/500x500.jpg"
+              alt="song image" width="50" height="50" />
+          <p id="id-album-played" style="font-size: 12px;">
+              Another One Bites The Dust - Remastered 2011 <br /><span style="font-size: 9px;">Queen</span>
+          </p>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+            <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-window-fullscreen" viewBox="0 0 16 16">
+              <path d="M3 3.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Zm1.5 0a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Zm1 .5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1Z" />
+             <path d="M.5 1a.5.5 0 0 0-.5.5v13a.5.5 0 0 0 .5.5h15a.5.5 0 0 0 .5-.5v-13a.5.5 0 0 0-.5-.5H.5ZM1 5V2h14v3H1Zm0 1h14v8H1V6Z" />
+          </svg>
+      </div>
+
+      <!--Second div-->
+
+       <div class="second-div">
+            <div class="first-of-second">
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-shuffle mt-2" viewBox="0 0 16 16">
+                   <path fill-rule="evenodd" d="M0 3.5A.5.5 0 0 1 .5 3H1c2.202 0 3.827 1.24 4.874 2.418.49.552.865 1.102 1.126 1.532.26-.43.636-.98 1.126-1.532C9.173 4.24 10.798 3 13 3v1c-1.798 0-3.173 1.01-4.126 2.082A9.624 9.624 0 0 0 7.556 8a9.624 9.624 0 0 0 1.317 1.918C9.828 10.99 11.204 12 13 12v1c-2.202 0-3.827-1.24-4.874-2.418A10.595 10.595 0 0 1 7 9.05c-.26.43-.636.98-1.126 1.532C4.827 11.76 3.202 13 1 13H.5a.5.5 0 0 1 0-1H1c1.798 0 3.173-1.01 4.126-2.082A9.624 9.624 0 0 0 6.444 8a9.624 9.624 0 0 0-1.317-1.918C4.172 5.01 2.796 4 1 4H.5a.5.5 0 0 1-.5-.5z" />
+                    <path d="M13 5.466V1.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192zm0 9v-3.932a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384l-2.36 1.966a.25.25 0 0 1-.41-.192z" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left mt-1 " viewBox="0 0 16 16">
+                    <path d="M10 12.796V3.204L4.519 8 10 12.796zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753z" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-play-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                    <path d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445z" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right mt-1" viewBox="0 0 16 16">
+                    <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z" />
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-link  mt-1" viewBox="0 0 16 16">
+                    <path d="M6.354 5.5H4a3 3 0 0 0 0 6h3a3 3 0 0 0 2.83-4H9c-.086 0-.17.01-.25.031A2 2 0 0 1 7 10.5H4a2 2 0 1 1 0-4h1.535c.218-.376.495-.714.82-1z" />
+                    <path d="M9 5.5a3 3 0 0 0-2.83 4h1.098A2 2 0 0 1 9 6.5h3a2 2 0 1 1 0 4h-1.535a4.02 4.02 0 0 1-.82 1H12a3 3 0 1 0 0-6H9z" />
+                </svg>
+            </div>
+            <div class="second-of-second"><span>0:12</span>
+                <hr style="height:2px; width:100%; border-width:0; color:rgb(255, 255, 255); background-color:rgb(161, 159, 159)">
+                <span>3:34</span>
+            </div>
+        </div>
+        <!--Thirt div-->
+         <div class="third-div">
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-justify" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-pc-display" viewBox="0 0 16 16">
+                <path d="M8 1a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1V1Zm1 13.5a.5.5 0 1 0 1 0 .5.5 0 0 0-1 0Zm2 0a.5.5 0 1 0 1 0 .5.5 0 0 0-1 0ZM9.5 1a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5ZM9 3.5a.5.5 0 0 0 .5.5h5a.5.5 0 0 0 0-1h-5a.5.5 0 0 0-.5.5ZM1.5 2A1.5 1.5 0 0 0 0 3.5v7A1.5 1.5 0 0 0 1.5 12H6v2h-.5a.5.5 0 0 0 0 1H7v-4H1.5a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5H7V2H1.5Z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-volume-up" viewBox="0 0 16 16">
+                <path d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z" />
+                <path d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z" />
+                <path d="M10.025 8a4.486 4.486 0 0 1-1.318 3.182L8 10.475A3.489 3.489 0 0 0 9.025 8c0-.966-.392-1.841-1.025-2.475l.707-.707A4.486 4.486 0 0 1 10.025 8zM7 4a.5.5 0 0 0-.812-.39L3.825 5.5H1.5A.5.5 0 0 0 1 6v4a.5.5 0 0 0 .5.5h2.325l2.363 1.89A.5.5 0 0 0 7 12V4zM4.312 6.39 6 5.04v5.92L4.312 9.61A.5.5 0 0 0 4 9.5H2v-3h2a.5.5 0 0 0 .312-.11z" />
+            </svg>
+            <hr style="height:4px; width:100%; border-width:0; border-radius: 20px; color:rgb(255, 255, 255); background-color:rgb(255, 255, 255)">
+        </div>
+
+     
+  </footer>
+
+    </div>
+    
+    <script>
+        let isLoggedIn = false;
+    const LOGIN_BUTTON_HOMEPAGE = document.getElementById("loginButtonHomepage");
+
+LOGIN_BUTTON_HOMEPAGE.addEventListener("click", () => {
+    window.location.href = './login.html';
+})
+
+const newparams = new URLSearchParams(window.location.search)
+const user = newparams.get('u')
+console.log("User: " + user)
+const LOGIN_USER_DIV = document.getElementById("loginUserDiv");
+
+const setUser = (username) => {
+    LOGIN_USER_DIV.innerHTML = `
+    <div class="dropdown mr-5">
+  <button class="userDiv btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+    <i class="bi bi-person-circle px-0 mr-2"></i>
+    ${username}
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item text-white" href="index.html">Sign Out</a>
+  </div>
+</div>
+    `
+}
+
+if (user) {
+    isLoggedIn = true;
+    LOGIN_USER_DIV.innerHTML = "";
+    setUser(user);
+}
+
+const HOME_BUTTON = document.getElementById("home");
+HOME_BUTTON.addEventListener("click", () => {
+    if (isLoggedIn) {
+        window.location.href = "./index.html?u=" + user;
+    } else {
+        window.location.href = "./index.html";
+    }
+})
+
+       const params = new URLSearchParams(window.location.search)
+       const query = params.get('q')
+
+       const BASE_URL = ("https://striveschool-api.herokuapp.com/api/deezer/album/" + query)
+       const headers = {
+                method: "GET",
+                headers: {
+                    "X-RapidAPI-Key":
+                    "955a238bedmshd7fff636958030ap1f1f55jsn858243bf16fa",
+                    "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
+       }};
+
+       const postAlbum = (query) => {
+           fetch(BASE_URL, headers)
+           .then ((response) => response.json())
+           .then ((data) => {
+            console.log(data)
+
+            let coverImage = document.querySelector(".image-cover")
+            coverImage.innerHTML = `
+                                        <img id="hero-img" src="${data.cover_medium}"
+                                         class="jumbo-picture"
+                                         alt="Hybrid theory album cover"
+                                         style="width: 200px; height: 200px"
+                                        />
+                                   `
+
+            //missing in html
+
+            let titleSection = document.querySelector(".title-section")
+
+            titleSection.innerHTML += `<div class="col-12 title-section1">
+                                         <div class="d-flex flex-column">
+                                            <p style="font-size:10px; margin-bottom:2px;">ALBUM</p>
+                                            <h1>${data.title}</h1>
+                                            <div>
+                                                <p style="font-size:10px"><strong>
+                                                <img class="mr-2" src="${data.cover_small}" alt=""
+                                                style="border-radius: 2rem; height: 20px;"
+                                                alt="Original Album Cover"/>${data.artist.name} • </strong>
+                                                ${new Date(data.release_date).getFullYear()} 
+                                                <strong> • </strong>${data.nb_tracks} songs<strong> •
+                                                </strong>${HOURSANDMINUTES(data.duration)}<strong> 
+                                            </p>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      `;
+
+           //  creating list of track 
+           const arrayOfTracks = data.tracks.data;
+
+                for (let i = 0; i < arrayOfTracks.length; i++) {
+                    const singleTrack = arrayOfTracks[i]
+                  
+                    let titleList = document.getElementById("table-info") //put into html
+                         
+                    titleList.innerHTML +=   `
+                                            <div class="mt-3 d-flex bd-highlight">
+                                                <div class="number mt-2 pl-3 bd-highlight text-monospace" style="font-size:13px; color:#d3d3d3">${i + 1}</div>
+                                                <div class="title-artist pl-4 bd-highlight">
+                                                    <div style="line-height:14px;">
+                                                        <span style="font-size:13px;">
+                                                        ${singleTrack.title}</span><br>
+                                                        <span style="font-size:11px; color:#d3d3d3">
+                                                        ${data.artist.name}</span>
+                                                    </div>
+                                                </div>
+                                                <div class="time ml-auto mt-2 pr-4 bd-highlight" style="font-size:12px; color:#d3d3d3">${MINUTESANDSECONDS(singleTrack.duration)}</div>
+                                            </div>
+                                           `        
+            ;}})
+
+           .catch((err) => console.log(err));
+           
+       }
+
+       //converting Hours and Minutes for duration time
+       const HOURSANDMINUTES = (duration) => {
+                const sec = parseInt(duration)
+                let hours = Math.floor(sec / 3600);
+                let minutes = Math.floor((sec - (hours * 3600)) / 60); // get minutes
+                let seconds = sec - (hours * 3600) - (minutes * 60);
+                if (hours < 10) { hours = hours; }
+                if (minutes < 10) { minutes = "0" + minutes; }
+                if (seconds < 10) { seconds = "0" + seconds; }
+                return hours + ' hr ' + minutes + ' min'; //  MM : SS
+                }
+
+        //converting Minuetes and Seconds for duration time
+        const MINUTESANDSECONDS = (duration) => {
+                const sec = parseInt(duration)
+                let hours = Math.floor(sec / 3600);
+                let minutes = Math.floor((sec - (hours * 3600)) / 60); // get minutes
+                let seconds = sec - (hours * 3600) - (minutes * 60);
+                if (hours < 10) { hours = "0" + hours; }
+                if (minutes < 10) { minutes = "0" + minutes; }
+                if (seconds < 10) { seconds = "0" + seconds; }
+                return minutes + ':' + seconds; //  MM : SS
+                }
+
+       window.onload = () => {
+        postAlbum()
+       }
+
+
+    </script>
+  </script>
+    
+
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+  -->
 </body>
 </html>
