@@ -658,7 +658,7 @@
   </footer>
 
   <script>
-
+    let isLoggedIn = false;
     const LOGIN_BUTTON_HOMEPAGE = document.getElementById("loginButtonHomepage");
 
 LOGIN_BUTTON_HOMEPAGE.addEventListener("click", () => {
@@ -685,6 +685,7 @@ const setUser = (username) => {
 }
 
 if (user) {
+    isLoggedIn = true;
     LOGIN_USER_DIV.innerHTML = "";
     setUser(user);
 }
@@ -721,8 +722,13 @@ if (user) {
         const ALBUMBUTTONS = document.getElementsByClassName("albumLinks");
         for (let i = 0; i < ALBUMBUTTONS.length; i++) {
           ALBUMBUTTONS[i].addEventListener("click", () => {
-            window.location.href =
+            if (isLoggedIn) {
+                window.location.href =
+              "./album.html?q=" + albums[i].album.id.toString() + "&u=" + user;
+            } else {
+                window.location.href =
               "./album.html?q=" + albums[i].album.id.toString();
+            }
           });
         }
       })
@@ -749,8 +755,13 @@ if (user) {
         const ALBUMBUTTONS = document.getElementsByClassName("albumLinks2");
         for (let i = 0; i < ALBUMBUTTONS.length; i++) {
           ALBUMBUTTONS[i].addEventListener("click", () => {
-            window.location.href =
+            if (isLoggedIn) {
+                window.location.href =
+              "./album.html?q=" + albums[i].album.id.toString() + "&u=" + user;
+            } else {
+                window.location.href =
               "./album.html?q=" + albums[i].album.id.toString();
+            }
           });
         }
       })
@@ -777,8 +788,13 @@ if (user) {
         const ALBUMBUTTONS = document.getElementsByClassName("albumLinks3");
         for (let i = 0; i < ALBUMBUTTONS.length; i++) {
           ALBUMBUTTONS[i].addEventListener("click", () => {
-            window.location.href =
+            if (isLoggedIn) {
+                window.location.href =
+              "./album.html?q=" + albums[i].album.id.toString() + "&u=" + user;
+            } else {
+                window.location.href =
               "./album.html?q=" + albums[i].album.id.toString();
+            }
           });
         }
       })
@@ -805,8 +821,13 @@ if (user) {
         const ALBUMBUTTONS = document.getElementsByClassName("albumLinks4");
         for (let i = 0; i < ALBUMBUTTONS.length; i++) {
           ALBUMBUTTONS[i].addEventListener("click", () => {
-            window.location.href =
+            if (isLoggedIn) {
+                window.location.href =
+              "./album.html?q=" + albums[i].album.id.toString() + "&u=" + user;
+            } else {
+                window.location.href =
               "./album.html?q=" + albums[i].album.id.toString();
+            }
           });
         }
       })

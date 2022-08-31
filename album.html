@@ -112,13 +112,18 @@
       border: none;
     }
 
+    .userDiv {
+        border-radius: 2rem;
+        background-color: #1f1f1e;
+    }
 
+    .dropdown-menu {
+        background-color: black;
+    }
 
-  
-
-
-
-
+    .dropdown-item:hover {
+        background-color: #1f1f1e;
+    }
     </style>
   </head>
   <body>
@@ -136,46 +141,46 @@
                 <div class="left-section ml-2 mt-4">
                     <div class="left-menu mb-2 position-relative">
                         <i class="bi bi-house-door side-icons"></i>
-                        <span class="position-absolute font-weight-bold" style="left:40px; top:8px; font-size: 12px;">Home</span>
+                        <span class="position-absolute font-weight-bold" id="home" style="left:40px; top:8px; font-size: 12px; cursor: pointer;">Home</span>
                     </div>
                     <div class="left-menu mb-2 search-div position-relative">
                         <i class="bi bi-search side-icons"></i>
-                            <span class="position-absolute font-weight-bold" style="left:40px; top:8px; font-size: 12px;">Search</span>
+                            <span class="position-absolute font-weight-bold" style="left:40px; top:8px; font-size: 12px; cursor: pointer;">Search</span>
                     </div>
                     <div class="left-menu mb-3 position-relative">
                         <i class="bi bi-collection side-icons"></i>
-                        <span class="position-absolute font-weight-bold" style="left:40px; top:8px; font-size: 12px;">Your Library</span>
+                        <span class="position-absolute font-weight-bold" style="left:40px; top:8px; font-size: 12px; cursor: pointer;">Your Library</span>
                     </div>
                     <div class="left-menu mb-3 position-relative">
                         <i class="bi bi-plus-square-fill"></i>
-                        <span class="position-absolute font-weight-bold" style="left:40px; top:4px; font-size: 12px;">Create Playlist</span>
+                        <span class="position-absolute font-weight-bold" style="left:40px; top:4px; font-size: 12px; cursor: pointer;">Create Playlist</span>
                     </div>
                     <div class="left-menu mb-4 position-relative">
                         <i class="bi bi-bookmark-heart-fill"></i>
-                        <span class="position-absolute font-weight-bold" style="left:40px; top:4px; font-size: 12px;">Liked songs</span>
+                        <span class="position-absolute font-weight-bold" style="left:40px; top:4px; font-size: 12px; cursor: pointer;">Liked songs</span>
                     </div>
                     <hr>
                     <section class="side-playlists" style="background-color: rgb(0, 0, 0);">
                         <div class="container" >
                             <div class="row">
                                   <ul class="list" style="list-style-type:none; margin-left:-35px" >
-                                    <li class="item mb-2 " style="font-size: 12px;color: rgb(92, 92, 92);">Funky Heavy Bluesy</li>
-                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); ">Your To Songs 2020</li>
-                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); ">In Love With You</li>
-                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); ">This Is Rod Stewart</li>
-                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); ">FRANCHISE ft.Young</li>
-                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); ">Your Top Songs 2019</li>
-                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); ">Your Top Songs 2020</li>
-                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); ">Pallegio</li>
-                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); ">This Is Joe Bonamassa</li>
-                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); ">Jun19</li>
-                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); ">Jack 30th Party 2</li>
-                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); ">Jack 30th Party </li>
-                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); ">This Is Opeth</li>
-                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); ">Metal Ballads</li>
-                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); ">New Playlist</li>
-                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); ">Your Top Songs 2018</li>
-                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); ">Jazz Classics</li>
+                                    <li class="item mb-2 " style="font-size: 12px;color: rgb(92, 92, 92); cursor: pointer;">Funky Heavy Bluesy</li>
+                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); cursor: pointer; ">Your To Songs 2020</li>
+                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); cursor: pointer; ">In Love With You</li>
+                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); cursor: pointer; ">This Is Rod Stewart</li>
+                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); cursor: pointer; ">FRANCHISE ft.Young</li>
+                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); cursor: pointer; ">Your Top Songs 2019</li>
+                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); cursor: pointer; ">Your Top Songs 2020</li>
+                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); cursor: pointer; ">Pallegio</li>
+                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); cursor: pointer; ">This Is Joe Bonamassa</li>
+                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); cursor: pointer; ">Jun19</li>
+                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); cursor: pointer; ">Jack 30th Party 2</li>
+                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); cursor: pointer; ">Jack 30th Party </li>
+                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); cursor: pointer; ">This Is Opeth</li>
+                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); cursor: pointer; ">Metal Ballads</li>
+                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); cursor: pointer; ">New Playlist</li>
+                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); cursor: pointer; ">Your Top Songs 2018</li>
+                                    <li class="item mb-2" style="font-size: 12px;color: rgb(92, 92, 92); cursor: pointer; ">Jazz Classics</li>
                                     <li class="item mb-2 font-weight-bold" style="font-size: 12px;color: rgb(212, 211, 211); ">
                                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-circle mr-1" viewBox="0 0 16 16">
                                         <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/>
@@ -198,14 +203,14 @@
                                 <i class="bi bi-arrow-left-circle arrow-icons mr-2"></i>
                                 <i class="bi bi-arrow-right-circle arrow-icons"></i>
                             </ul>
-                            <form class="form-inline my-2 my-lg-0">
-                                <button class="btn btn-outline-light mr-3 rounded-pill" type="submit">
+                            <div id="loginUserDiv">
+                                <button id="loginButtonHomepage" class="btn btn-outline-light mr-3 rounded-pill">
                                         Login
                                 </button>
-                                <button class="btn btn-outline-light my-2 rounded-pill" type="submit">
-                                        SignUp
+                                <button class="btn btn-outline-light my-2 rounded-pill" onclick="window.location.href = 'signup.html'">
+                                        Sign Up
                                 </button>
-                            </form>
+                        </div>
                         </div>
                     </nav>
                </div>
@@ -355,6 +360,47 @@
     </div>
     
     <script>
+        let isLoggedIn = false;
+    const LOGIN_BUTTON_HOMEPAGE = document.getElementById("loginButtonHomepage");
+
+LOGIN_BUTTON_HOMEPAGE.addEventListener("click", () => {
+    window.location.href = './login.html';
+})
+
+const newparams = new URLSearchParams(window.location.search)
+const user = newparams.get('u')
+console.log("User: " + user)
+const LOGIN_USER_DIV = document.getElementById("loginUserDiv");
+
+const setUser = (username) => {
+    LOGIN_USER_DIV.innerHTML = `
+    <div class="dropdown mr-5">
+  <button class="userDiv btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+    <i class="bi bi-person-circle px-0 mr-2"></i>
+    ${username}
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item text-white" href="index.html">Sign Out</a>
+  </div>
+</div>
+    `
+}
+
+if (user) {
+    isLoggedIn = true;
+    LOGIN_USER_DIV.innerHTML = "";
+    setUser(user);
+}
+
+const HOME_BUTTON = document.getElementById("home");
+HOME_BUTTON.addEventListener("click", () => {
+    if (isLoggedIn) {
+        window.location.href = "./index.html?u=" + user;
+    } else {
+        window.location.href = "./index.html";
+    }
+})
+
        const params = new URLSearchParams(window.location.search)
        const query = params.get('q')
 
