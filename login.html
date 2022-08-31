@@ -34,21 +34,84 @@
       }
 
       a {
-        color: #48b850
+        color: #48b850;
+      }
+
+      a:hover {
+        color: #48b850;
       }
 
       .footerInfo {
         font-size: 0.5rem;
         color: gray;
       }
+
+      .fbButton {
+        border-radius: 2rem;
+        background-color: #3e5a9b;
+        border: #3e5a9b;
+        transition: background-color 0.3s ease-in-out;
+      }
+
+      .fbButton:hover {
+        background-color: #31477a;
+      }
+
+      .fbButton:active {
+        background-color: #1d2945;
+      }
+
+      .appleButton {
+        border-radius: 2rem;
+        background-color: black;
+        border: black;
+        transition: background-color 0.3s ease-in-out;
+      }
+
+      .appleButton:hover {
+        background-color: #1c1c1c;
+      }
+
+      .appleButton:active {
+        background-color: #303030;
+      }
+
+      .loginButton {
+        border-radius: 2rem;
+        background-color: #48b850;
+        border: #48b850;
+        transition: background-color 0.3s ease-in-out;
+      }
+
+      .loginButton:hover {
+        background-color: #388c3e;
+      }
+
+      .loginButton:hover {
+        background-color: #225225;
+      }
     </style>
   </head>
   <body>
-    <header class="d-flex justify-content-center w-100 mt-3" style="font-size: 2.4rem">
+    <header
+      class="d-flex justify-content-center w-100 mt-3"
+      style="font-size: 2.4rem"
+    >
       <i class="bi bi-spotify spotify-icon"></i>
-      <span class="spotify-text vertical-align-middle font-weight-bold">Spotify</span>
-      <svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" fill="currentColor" class="bi bi-r-circle mt-4" viewBox="0 0 16 16">
-        <path d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8Zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM5.5 4.002h3.11c1.71 0 2.741.973 2.741 2.46 0 1.138-.667 1.94-1.495 2.24L11.5 12H9.98L8.52 8.924H6.836V12H5.5V4.002Zm1.335 1.09v2.777h1.549c.995 0 1.573-.463 1.573-1.36 0-.913-.596-1.417-1.537-1.417H6.835Z"/>
+      <span class="spotify-text vertical-align-middle font-weight-bold"
+        >Spotify</span
+      >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="8"
+        height="8"
+        fill="currentColor"
+        class="bi bi-r-circle mt-4"
+        viewBox="0 0 16 16"
+      >
+        <path
+          d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8Zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM5.5 4.002h3.11c1.71 0 2.741.973 2.741 2.46 0 1.138-.667 1.94-1.495 2.24L11.5 12H9.98L8.52 8.924H6.836V12H5.5V4.002Zm1.335 1.09v2.777h1.549c.995 0 1.573-.463 1.573-1.36 0-.913-.596-1.417-1.537-1.417H6.835Z"
+        />
       </svg>
     </header>
 
@@ -57,20 +120,12 @@
     <main class="justify-content-center mx-auto text-center w-50 mt-5">
       <!-- social media logins -->
       <h4 class="" style="font-size: 1rem">To continue, log in to Spotify.</h4>
-      <button
-        type="button"
-        class="btn btn-dark w-50"
-        style="border-radius: 2rem; background-color: #3e5a9b; border: #3e5a9b"
-      >
+      <button type="button" class="btn btn-dark w-50 fbButton">
         <i class="bi bi-facebook mr-2"></i>
         CONTINUE WITH FACEBOOK
       </button>
       <br />
-      <button
-        type="button"
-        class="btn btn-dark w-50 mt-3"
-        style="border-radius: 2rem; background-color: black; border: black"
-      >
+      <button type="button" class="btn btn-dark w-50 mt-3 appleButton">
         <i class="bi bi-apple mr-2"></i>
         CONTINUE WITH APPLE
       </button>
@@ -125,15 +180,7 @@
             Remember me
           </label>
         </div>
-        <button
-          type="button"
-          class="btn btn-dark w-50 p-2"
-          style="
-            border-radius: 2rem;
-            background-color: #48b850;
-            border: #48b850;
-          "
-        >
+        <button type="button" class="btn btn-dark w-50 p-2 loginButton">
           LOG IN
         </button>
       </div>
@@ -154,8 +201,12 @@
         >
           SIGN UP FOR SPOTIFY
         </button>
-        <hr class="mt-4">
-        <p class="footerInfo">If you click "Log in with Facebook" and are not a Spotify user, you will be registered and you agree to Spotify's <a href="">Terms & Conditions</a> and <a href="">Privacy Policy</a>.</p>
+        <hr class="mt-4" />
+        <p class="footerInfo">
+          If you click "Log in with Facebook" and are not a Spotify user, you
+          will be registered and you agree to Spotify's
+          <a href="">Terms & Conditions</a> and <a href="">Privacy Policy</a>.
+        </p>
       </div>
     </main>
 
