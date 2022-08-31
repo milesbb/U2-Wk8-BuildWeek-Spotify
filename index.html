@@ -16,7 +16,7 @@
       background: rgb(0,0,0);
       background: linear-gradient(0deg, rgba(0,0,0,0.5228685224089635) 0%, rgba(17,17,17,1) 0%, rgba(38,13,13,1) 99%, rgba(85,28,28,1) 100%);
       animation: 3s ease-out 0s 1 fadedOpacity;
-      overscroll-behavior-y: none;
+      overscroll-behavior: none;
     }
 
     @keyframes fadedOpacity {
@@ -130,6 +130,19 @@
         color: white;
     }
 
+    .userDiv {
+        border-radius: 2rem;
+        background-color: #1f1f1e;
+    }
+
+    .dropdown-menu {
+        background-color: black;
+    }
+
+    .dropdown-item:hover {
+        background-color: #1f1f1e;
+    }
+
     </style>
   </head>
   <body>
@@ -217,14 +230,15 @@
                                 <i class="bi bi-arrow-left-circle arrow-icons mr-2"></i>
                                 <i class="bi bi-arrow-right-circle arrow-icons"></i>
                             </ul>
-                            <form class="form-inline my-2 my-lg-0">
-                                <button class="btn btn-outline-light mr-3 rounded-pill" type="submit">
-                                        Login
-                                </button>
-                                <button class="btn btn-outline-light my-2 rounded-pill" type="submit">
-                                        SignUp
-                                </button>
-                            </form>
+                            <div id="loginUserDiv">
+                                    <button id="loginButtonHomepage" class="btn btn-outline-light mr-3 rounded-pill">
+                                            Login
+                                    </button>
+                                    <button class="btn btn-outline-light my-2 rounded-pill">
+                                            Sign Up
+                                    </button>
+                            </div>
+                            
                         </div>
                     </nav>
                </div>
@@ -365,38 +379,7 @@
                           </div>
                       </div>
 
-                      <div class="order-5 p-2">
-                          <div class="container mb-3">
-                              <div class="row" id="menu">
-                                <div class="card mb-3 overflow-hidden albumLinks" style="width: 256px; cursor: pointer; height: 60px; background-color: #c9c9c91c; ">
-                                  <div class="row no-gutters">
-                                    <div class="col-md-3">
-                                      <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="img-fluid albumImages" alt="..." style="width: 70px; height: 60px;">
-                                    </div>
-                                    <div class="col-md-9">
-                                      <div class="card-body mt-1">
-                                        <h5 class="card-title albumNames" style="font-size: 14px;">Card title</h5>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="row" id="menu">
-                                <div class="card mb-3 overflow-hidden albumLinks" style="width: 256px; cursor: pointer; height: 60px; background-color: #c9c9c91c; ">
-                                  <div class="row no-gutters">
-                                    <div class="col-md-3">
-                                      <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="img-fluid albumImages" alt="..." style="width: 70px; height: 60px;">
-                                    </div>
-                                    <div class="col-md-9">
-                                      <div class="card-body mt-1">
-                                        <h5 class="card-title albumNames" style="font-size: 14px;">Card title</h5>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                          </div>
-                      </div>
+                      
 
 
                     </div>
@@ -675,6 +658,39 @@
   </footer>
 
   <script>
+
+    const LOGIN_BUTTON_HOMEPAGE = document.getElementById("loginButtonHomepage");
+
+LOGIN_BUTTON_HOMEPAGE.addEventListener("click", () => {
+    window.location.href = './login.html';
+})
+
+const params = new URLSearchParams(window.location.search)
+const user = params.get('u')
+console.log("User: " + user)
+const LOGIN_USER_DIV = document.getElementById("loginUserDiv");
+
+const setUser = (username) => {
+    LOGIN_USER_DIV.innerHTML = `
+    <div class="dropdown mr-5">
+  <button class="userDiv btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+    <i class="bi bi-person-circle px-0 mr-2"></i>
+    ${username}
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item text-white" href="index.html">Sign Out</a>
+  </div>
+</div>
+    `
+}
+
+if (user) {
+    LOGIN_USER_DIV.innerHTML = "";
+    setUser(user);
+}
+
+
+
     const options = {
       method: "GET",
       headers: {
@@ -803,7 +819,9 @@
         INPUT_BAR.classList.toggle("d-none");
         SEARCH_CLICK.classList.toggle("d-none");
       })
-  </script>
+
+    
+</script>
     
 
     <!-- Optional JavaScript; choose one of the two! -->

@@ -23,6 +23,7 @@
     <style>
       body {
         font-size: 1rem;
+        overscroll-behavior: none;
       }
 
       .form-check-input:checked {
@@ -148,6 +149,7 @@
       <div class="w-50 mx-auto mt-4">
         <div class="input-group mb-3">
           <input
+            id="usernameInput"
             type="text"
             class="form-control"
             placeholder="Email address or username"
@@ -158,6 +160,7 @@
         </div>
         <div class="input-group mb-3">
           <input
+            id="passwordInput"
             type="password"
             class="form-control"
             placeholder="Password"
@@ -180,7 +183,7 @@
             Remember me
           </label>
         </div>
-        <button type="button" class="btn btn-dark w-50 p-2 loginButton">
+        <button id="loginButton" type="button" class="btn btn-dark w-50 p-2 loginButton">
           LOG IN
         </button>
       </div>
@@ -211,7 +214,26 @@
     </main>
 
     <!-- Internal JS -->
-    <script></script>
+    <script>
+        let testUser = "test"
+        let testPass = "test"
+
+        const LOGIN_BUTTON = document.getElementById("loginButton");
+        LOGIN_BUTTON.addEventListener("click", () => {
+            let enteredUser = document.getElementById("usernameInput").value;
+            let enteredPass = document.getElementById("passwordInput").value;
+
+            if (testUser === enteredUser) {
+                if (testPass === enteredPass) {
+                    window.location.href = "./index.html?u=" + enteredUser;
+                } else {
+                    alert("Incorrect Password")
+                }
+            } else {
+                alert("Username not found")
+            }
+        })
+    </script>
 
     <!-- Bootstrap -->
     <script
