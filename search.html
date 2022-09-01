@@ -250,14 +250,14 @@
                 <div class="left-section ml-2 mt-4">
                     <div class="greyToWhite left-menu mb-2 position-relative">
                         <i class="bi bi-house-door side-icons"></i>
-                        <span class="position-absolute font-weight-bold"  style="left:40px; top:8px; font-size: 12px; cursor: pointer;">Home</span>
+                        <span class="position-absolute font-weight-bold" onclick="takeOnHomePage()" style="left:40px; top:8px; font-size: 12px; cursor: pointer;">Home</span>
                     </div>
-                    <div class="openSearch greyToWhite left-menu mb-2 search-div position-relative">
+                    <div class="d-none openSearch greyToWhite left-menu mb-2 search-div position-relative">
                         <i class="bi bi-search side-icons"></i>
                             <span class="position-absolute font-weight-bold" style="left:40px; top:8px; font-size: 12px; cursor: pointer;">Search</span>
                             
                     </div>
-                    <div class="d-none searchInputBar greyToWhite input-group mb-3 mt-3" >
+                    <div class=" searchInputBar greyToWhite input-group mb-3 mt-3" >
                         <input id="searchBar" type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
                         <div class="input-group-append">
                           <button id="searchButton" class="btn btn-outline-secondary" type="button">Go</button>
@@ -943,8 +943,11 @@
         searchArtist(INPUT_TEXT.value)
       })
 
+      const takeOnHomePage = () => {
+        window.location.href =
+             "./index.html"
+      }
       const searchArtist = (query) => {
-       
        window.location.href =
              "./search.html?q=" + query + "&u=" + user;
      }
