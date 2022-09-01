@@ -279,50 +279,9 @@ h5 {
                       <h5 class="pl-3">Popular</h5>
                       <div>
                        
-                        <!-- <table class="col-12 table">
-                           <thead>
-                            <tr>
-                              <th scope="col"></th>
-                              <th scope="col"></th>
-                              <th scope="col"></th>
-                              <th scope="col"></th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <th scope="row">1</th>
-                              <td>Mark</td>
-                              <td>Otto</td>
-                              <td>@mdo</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">2</th>
-                              <td>Jacob</td>
-                              <td>Thornton</td>
-                              <td>@fat</td>
-                            </tr>
-                            <tr>
-                              <th scope="row">3</th>
-                              <td>Larry</td>
-                              <td>the Bird</td>
-                              <td>@twitter</td>
-                            </tr>
-    
-                            <tr>
-                              <th scope="row">4</th>
-                              <td>Larry</td>
-                              <td>the Bird</td>
-                              <td>@twitter</td>
-                            </tr>
-    
-                            <tr>
-                              <th scope="row">5</th>
-                              <td>Larry</td>
-                              <td>the Bird</td>
-                              <td>@twitter</td>
-                            </tr>
-                          </tbody>
-                        </table> -->
+                        <div class="col-md-8 col-lg-8 col-xl-8 mt-5 pt-5 title-section">
+
+                        </div>
                       </div>
                     </div>
   
@@ -457,21 +416,40 @@ h5 {
     )
     .then((response) => response.json())
     .then(response=> {
-      const artist =response;
+      const artist = response;
       console.log(response)
+      console.log(artist);
 
       const ALBUMARTIST = document.getElementById("albumId");
       const NAMEArtist  =document.getElementsByClassName("nameArtist")
-      ALBUMARTIST.innerHTML = `
-                                        <img id="${artist.id}" src="${artist.picture_big}"                                         
-                                        />
-                                   `
+      ALBUMARTIST.src = artist.picture_xl
 
-     NAMEArtist.innerHTML = `
-                               ${artist.name}
-                                   `                             
+     NAMEArtist[0].innerText = artist.name
+                                                     
     })
 
+    // fetch(
+    //   "https://striveschool-api.herokuapp.com/api/deezer/artist/"+id,
+    //   artists
+    // )
+    // .then((response) => response.json())
+    // .then(data => {
+    //   // const artist = response;
+    //   console.log(data)
+
+    //   const ALBUMARTISTCOVER = document.querySelector(".coverImg");
+    //   const NAMEArtist  =document.getElementsByClassName("nameArtist")
+    //   ALBUMARTISTCOVER.innerHTML = `
+    //                                     <img id="${data.id}" src="${artist.picture_big}"                                         
+    //                                     />
+    //                                `
+
+    //  NAMEArtist.innerHTML = `
+    //                            ${artist.name}
+    //                                `               
+                                   
+                                   
+    // })
 
     </script>
     <!-- Optional JavaScript; choose one of the two! -->
