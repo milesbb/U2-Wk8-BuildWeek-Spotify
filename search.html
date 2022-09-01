@@ -16,7 +16,7 @@
       color: white;
       background: rgb(0,0,0);
       background: linear-gradient(0deg, rgba(0,0,0,0.5228685224089635) 0%, rgba(17,17,17,1) 0%, rgba(38,13,13,1) 99%, rgb(91, 36, 36) 100%);
-      animation: 3s ease-out 0s 1 fadedOpacity;
+      /* animation: 3s ease-out 0s 1 fadedOpacity; */
       overscroll-behavior: none;
     }
 
@@ -142,7 +142,7 @@
     }
     .text-artist {
       color: #8d8d8d;
-      font-size: 11px;
+      font-size: 16px;
     }
     .text-album{
       font-size: 14px;
@@ -176,9 +176,10 @@
       white-space: nowrap;
       width: 180px; 
     }
+
     .card-content:hover{
       background-color: rgba(212, 212, 212, 0.109);
-      height: 240px;
+      height:350px;
       border-radius: 8px;
       
     }
@@ -231,15 +232,7 @@
     .dropdown-item:hover {
         background-color: #1f1f1e;
     }
-
-
-
-    
-
-
-
-
-
+ 
     </style>
   </head>
   <body>
@@ -257,19 +250,20 @@
                 <div class="left-section ml-2 mt-4">
                     <div class="greyToWhite left-menu mb-2 position-relative">
                         <i class="bi bi-house-door side-icons"></i>
-                        <span class="position-absolute font-weight-bold" style="left:40px; top:8px; font-size: 12px; cursor: pointer;">Home</span>
+                        <span class="position-absolute font-weight-bold"  style="left:40px; top:8px; font-size: 12px; cursor: pointer;">Home</span>
                     </div>
                     <div class="openSearch greyToWhite left-menu mb-2 search-div position-relative">
                         <i class="bi bi-search side-icons"></i>
                             <span class="position-absolute font-weight-bold" style="left:40px; top:8px; font-size: 12px; cursor: pointer;">Search</span>
                             
                     </div>
-                    <div class="searchInputBar d-none greyToWhite input-group mb-3">
+                    <div class="d-none searchInputBar greyToWhite input-group mb-3 mt-3" >
                         <input id="searchBar" type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
                         <div class="input-group-append">
                           <button id="searchButton" class="btn btn-outline-secondary" type="button">Go</button>
                         </div>
-                      </div>
+                    </div>
+                  
                     <div class="greyToWhite left-menu mb-3 position-relative">
                         <i class="bi bi-collection side-icons"></i>
                         <span class="position-absolute font-weight-bold" style="left:40px; top:8px; font-size: 12px; cursor: pointer;">Your Library</span>
@@ -327,6 +321,7 @@
                                 <i class="bi bi-arrow-left-circle arrow-icons mr-2 toWhite"></i>
                                 <i class="bi bi-arrow-right-circle arrow-icons toWhite"></i>
                             </ul>
+                           
                             <div id="loginUserDiv">
                                 <button id="loginButtonHomepage" class="btn btn-outline-light mr-3 rounded-pill">
                                         Login
@@ -334,657 +329,462 @@
                                 <button class="btn btn-outline-light my-2 rounded-pill" onclick="window.location.href = 'signup.html'">
                                         Sign Up
                                 </button>
+                            </div>
                         </div>
-                        </div>
-                    </nav>
+                    </nav>   
                </div>
 
-               <!--Good morning section-->
-               <div class="mb-3 pl-2"><h3>Good morning</h3></div>
+               <!--Top result container-->
+               <div>
+                <div class="mb-3 pl-2"><h5>Top results</h5></div>
                 <section>
-                  <div class="d-flex flex-nowrap">
-                    
-                      <div class="order-1 p-2">
-                          <div class="container mb-3">
-                              <div class="row" id="menu">
-                                <div class="card mb-3 overflow-hidden albumLinks" style="width: 256px; cursor: pointer; height: 60px; background-color: #c9c9c91c; ">
-                                  <div class="row no-gutters">
-                                    <div class="col-md-3">
-                                      <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="img-fluid albumImages" alt="..." style="width: 70px; height: 60px;">
-                                    </div>
-                                    <div class="col-md-9">
-                                      <div class="card-body">
-                                        <h5 class="card-title albumNames text-album" >Card title</h5>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
+                  <div class="container-top mb-3 ml-0 mr-0 pl-1 pr-0">
+                      <div class="row row col-lg-10 col-xl-12 mb-3 ml-0 mr-0 pl-1 pr-0" style="gap: 9px;" id="tryThis">
+
+                        <div class="card albumLinks4" style="width: 160px; cursor: pointer; height: 240px; background-color: #181818;">
+                          <div class="card-content">
+                              <div class="info-badge position-absolute rounded" style="top:2%; left:8%;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="white" class="bi bi-spotify" viewBox="0 0 16 16">
+                                <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/>
+                                </svg>
                               </div>
-                              <div class="row" id="menu">
-                                <div class="card mb-3 overflow-hidden albumLinks" style="width: 256px; cursor: pointer; height: 60px; background-color: #c9c9c91c; ">
-                                  <div class="row no-gutters">
-                                    <div class="col-md-3">
-                                      <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="img-fluid albumImages" alt="..." style="width: 70px; height: 60px;">
-                                    </div>
-                                    <div class="col-md-9">
-                                      <div class="card-body">
-                                        <h5 class="card-title albumNames text-album" >Card title</h5>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
+                              <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="card-img-top p-2 albumImages4" alt="...">
+                              <div class="song-card__play">
+                                <div class="triangle"></div>
+                              </div>
+                              <div class="card-body p-2 mb-2">
+                                <h5 class="card-title albumNames4 cut-text" style="color: rgb(255, 248, 248); font-size: 12px;">Card title</h5>
+                                <p class="card-text albumArtists4 text-artist" >name</p>
                               </div>
                           </div>
-                      </div>
-
-                      <div class="order-2 p-2">
-                          <div class="container mb-3">
-                              <div class="row" id="menu">
-                                <div class="card mb-3 overflow-hidden albumLinks" style="width: 256px; cursor: pointer; height: 60px; background-color: #c9c9c91c; ">
-                                  <div class="row no-gutters">
-                                    <div class="col-md-3">
-                                      <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="img-fluid albumImages" alt="..." style="width: 70px; height: 60px;">
-                                    </div>
-                                    <div class="col-md-9">
-                                      <div class="card-body">
-                                        <h5 class="card-title albumNames text-album" >Card title</h5>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="row" id="menu">
-                                <div class="card mb-3 overflow-hidden albumLinks" style="width: 256px; cursor: pointer; height: 60px; background-color: #c9c9c91c; ">
-                                  <div class="row no-gutters">
-                                    <div class="col-md-3">
-                                      <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="img-fluid albumImages" alt="..." style="width: 70px; height: 60px;">
-                                    </div>
-                                    <div class="col-md-9">
-                                      <div class="card-body">
-                                        <h5 class="card-title albumNames text-album" >Card title</h5>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                          </div>
-                      </div>
-
-                      <div class="order-3 p-2">
-                          <div class="container mb-3">
-                              <div class="row" id="menu">
-                                <div class="card mb-3 overflow-hidden albumLinks" style="width: 256px; cursor: pointer; height: 60px; background-color: #c9c9c91c; ">
-                                  <div class="row no-gutters">
-                                    <div class="col-md-3">
-                                      <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="img-fluid albumImages" alt="..." style="width: 70px; height: 60px;">
-                                    </div>
-                                    <div class="col-md-9">
-                                      <div class="card-body">
-                                        <h5 class="card-title albumNames text-album" >Card title</h5>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="row" id="menu">
-                                <div class="card mb-3 overflow-hidden albumLinks" style="width: 256px; cursor: pointer; height: 60px; background-color: #c9c9c91c; ">
-                                  <div class="row no-gutters">
-                                    <div class="col-md-3">
-                                      <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="img-fluid albumImages" alt="..." style="width: 70px; height: 60px;">
-                                    </div>
-                                    <div class="col-md-9">
-                                      <div class="card-body">
-                                        <h5 class="card-title albumNames text-album" >Card title</h5>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                          </div>
-                      </div>
-
-                      <div class="order-4 p-2">
-                          <div class="container mb-3">
-                              <div class="row" id="menu">
-                                <div class="card mb-3 overflow-hidden albumLinks" style="width: 256px; cursor: pointer; height: 60px; background-color: #c9c9c91c; ">
-                                  <div class="row no-gutters">
-                                    <div class="col-md-3">
-                                      <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="img-fluid albumImages" alt="..." style="width: 70px; height: 60px;">
-                                    </div>
-                                    <div class="col-md-9">
-                                      <div class="card-body">
-                                        <h5 class="card-title albumNames text-album" >Card title</h5>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="row" id="menu">
-                                <div class="card mb-3 overflow-hidden albumLinks" style="width: 256px; cursor: pointer; height: 60px; background-color: #c9c9c91c; ">
-                                  <div class="row no-gutters">
-                                    <div class="col-md-3">
-                                      <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="img-fluid albumImages" alt="..." style="width: 70px; height: 60px;">
-                                    </div>
-                                    <div class="col-md-9">
-                                      <div class="card-body">
-                                        <h5 class="card-title albumNames text-album" >Card title</h5>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                          </div>
-                      </div>
-
-                      <div class="order-4 p-2">
-                        <div class="container mb-3">
-                            <div class="row" id="menu">
-                              <div class="card mb-3 overflow-hidden albumLinks" style="width: 256px; cursor: pointer; height: 60px; background-color: #c9c9c91c; ">
-                                <div class="row no-gutters">
-                                  <div class="col-md-3">
-                                    <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="img-fluid albumImages" alt="..." style="width: 70px; height: 60px;">
-                                  </div>
-                                  <div class="col-md-9">
-                                    <div class="card-body">
-                                      <h5 class="card-title albumNames text-album" >Card title</h5>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="row" id="menu">
-                              <div class="card mb-3 overflow-hidden albumLinks" style="width: 256px; cursor: pointer; height: 60px; background-color: #c9c9c91c; ">
-                                <div class="row no-gutters">
-                                  <div class="col-md-3">
-                                    <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="img-fluid albumImages" alt="..." style="width: 70px; height: 60px;">
-                                  </div>
-                                  <div class="col-md-9">
-                                    <div class="card-body">
-                                      <h5 class="card-title albumNames text-album" >Card title</h5>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
                         </div>
-                    </div>
 
+                        <div class="card albumLinks4" style="width: 160px; cursor: pointer; height: 240px; background-color: #181818;">
+                          <div class="card-content">
+                              <div class="info-badge position-absolute rounded" style="top:2%; left:8%;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="white" class="bi bi-spotify" viewBox="0 0 16 16">
+                                <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/>
+                                </svg>
+                              </div>
+                              <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="card-img-top p-2 albumImages4" alt="...">
+                              <div class="song-card__play">
+                                <div class="triangle"></div>
+                              </div>
+                              <div class="card-body p-2 mb-2">
+                                <h5 class="card-title albumNames4 cut-text" style="color: rgb(255, 248, 248); font-size: 12px;">Card title</h5>
+                                <p class="card-text albumArtists4 text-artist" >name</p>
+                              </div>
+                          </div>
+                        </div>
 
-                      
+                        <div class="card albumLinks4" style="width: 160px; cursor: pointer; height: 240px; background-color: #181818;">
+                          <div class="card-content">
+                              <div class="info-badge position-absolute rounded" style="top:2%; left:8%;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="white" class="bi bi-spotify" viewBox="0 0 16 16">
+                                <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/>
+                                </svg>
+                              </div>
+                              <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="card-img-top p-2 albumImages4" alt="...">
+                              <div class="song-card__play">
+                                <div class="triangle"></div>
+                              </div>
+                              <div class="card-body p-2 mb-2">
+                                <h5 class="card-title albumNames4 cut-text" style="color: rgb(255, 248, 248); font-size: 12px;">Card title</h5>
+                                <p class="card-text albumArtists4 text-artist" >name</p>
+                              </div>
+                          </div>
+                        </div>
 
-                    </div>
+                        <div class="card albumLinks4" style="width: 160px; cursor: pointer; height: 240px; background-color: #181818;">
+                          <div class="card-content">
+                              <div class="info-badge position-absolute rounded" style="top:2%; left:8%;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="white" class="bi bi-spotify" viewBox="0 0 16 16">
+                                <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/>
+                                </svg>
+                              </div>
+                              <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="card-img-top p-2 albumImages4" alt="...">
+                              <div class="song-card__play">
+                                <div class="triangle"></div>
+                              </div>
+                              <div class="card-body p-2 mb-2">
+                                <h5 class="card-title albumNames4 cut-text" style="color: rgb(255, 248, 248); font-size: 12px;">Card title</h5>
+                                <p class="card-text albumArtists4 text-artist" >name</p>
+                              </div>
+                          </div>
+                        </div>
 
-                
-                </section>
-              
-                 <!--Recently viewed section-->
-                 <div class="mb-3 pl-2"><h5>Recently played</h5></div>
-                 <section>
-                    <div class="container mb-3 ml-0 mr-0 pl-1 pr-0">
-                      <div class="row col-lg-10 col-xl-12 mb-3 ml-0 mr-0 pl-1 pr-0" style="gap: 9px;" id="tryThis">
-
+                        <div class="card albumLinks4" style="width: 160px; cursor: pointer; height: 240px; background-color: #181818;">
+                          <div class="card-content">
+                              <div class="info-badge position-absolute rounded" style="top:2%; left:8%;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="white" class="bi bi-spotify" viewBox="0 0 16 16">
+                                <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/>
+                                </svg>
+                              </div>
+                              <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="card-img-top p-2 albumImages4" alt="...">
+                              <div class="song-card__play">
+                                <div class="triangle"></div>
+                              </div>
+                              <div class="card-body p-2 mb-2">
+                                <h5 class="card-title albumNames4 cut-text" style="color: rgb(255, 248, 248); font-size: 12px;">Card title</h5>
+                                <p class="card-text albumArtists4 text-artist" >name</p>
+                              </div>
+                          </div>
+                        </div>
                         
-                        <div class="card albumLinks2" style="width: 160px; cursor: pointer; height: 240px; background-color: #181818;">
-                          <div class="card-content">
-                              <div class="info-badge position-absolute rounded" style="top:2%; left:8%;">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="black" class="bi bi-spotify" viewBox="0 0 16 16">
-                                <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/>
-                                </svg>
-                              </div>
-                              <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="card-img-top p-2 albumImages2" alt="...">
-                              <div class="song-card__play">
-                                <div class="triangle"></div>
-                              </div>
-                              <div class="card-body p-2 mb-3">
-                                <h5 class="card-title albumNames2 cut-text" style="color: rgb(255, 248, 248); font-size: 12px;">Card title</h5>
-                                <p class="card-text albumArtists2 text-artist" >name</p>
-                              </div>
-                          </div>
-                        </div>
-
-                        <div class="card albumLinks2" style="width: 160px; cursor: pointer; height: 240px; background-color: #181818;">
+                        <div class="card albumLinks4" style="width: 160px; cursor: pointer; height: 240px; background-color: #181818;">
                           <div class="card-content">
                               <div class="info-badge position-absolute rounded" style="top:2%; left:8%;">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="white" class="bi bi-spotify" viewBox="0 0 16 16">
                                 <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/>
                                 </svg>
                               </div>
-                              <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="card-img-top p-2 albumImages2" alt="...">
+                              <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="card-img-top p-2 albumImages4" alt="...">
                               <div class="song-card__play">
                                 <div class="triangle"></div>
                               </div>
                               <div class="card-body p-2 mb-2">
-                                <h5 class="card-title albumNames2 cut-text" style="color: rgb(255, 248, 248); font-size: 12px;">Card title</h5>
-                                <p class="card-text albumArtists2 text-artist" >name</p>
+                                <h5 class="card-title albumNames4 cut-text" style="color: rgb(255, 248, 248); font-size: 12px;">Card title</h5>
+                                <p class="card-text albumArtists4 text-artist" >name</p>
                               </div>
                           </div>
                         </div>
 
-                        <div class="card albumLinks2" style="width: 160px; cursor: pointer; height: 240px; background-color: #181818;">
+                        <div class="card albumLinks4" style="width: 160px; cursor: pointer; height: 240px; background-color: #181818;">
                           <div class="card-content">
                               <div class="info-badge position-absolute rounded" style="top:2%; left:8%;">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="white" class="bi bi-spotify" viewBox="0 0 16 16">
                                 <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/>
                                 </svg>
                               </div>
-                              <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="card-img-top p-2 albumImages2" alt="...">
+                              <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="card-img-top p-2 albumImages4" alt="...">
                               <div class="song-card__play">
                                 <div class="triangle"></div>
                               </div>
                               <div class="card-body p-2 mb-2">
-                                <h5 class="card-title albumNames2 cut-text" style="color: rgb(255, 248, 248); font-size: 12px;">Card title</h5>
-                                <p class="card-text albumArtists2 text-artist" >name</p>
+                                <h5 class="card-title albumNames4 cut-text" style="color: rgb(255, 248, 248); font-size: 12px;">Card title</h5>
+                                <p class="card-text albumArtists4 text-artist" >name</p>
                               </div>
                           </div>
                         </div>
 
-                        <div class="card albumLinks2" style="width: 160px; cursor: pointer; height: 240px; background-color: #181818;">
+                        <div class="card albumLinks4" style="width: 160px; cursor: pointer; height: 240px; background-color: #181818;">
                           <div class="card-content">
                               <div class="info-badge position-absolute rounded" style="top:2%; left:8%;">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="white" class="bi bi-spotify" viewBox="0 0 16 16">
                                 <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/>
                                 </svg>
                               </div>
-                              <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="card-img-top p-2 albumImages2" alt="...">
+                              <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="card-img-top p-2 albumImages4" alt="...">
                               <div class="song-card__play">
                                 <div class="triangle"></div>
                               </div>
                               <div class="card-body p-2 mb-2">
-                                <h5 class="card-title albumNames2 cut-text" style="color: rgb(255, 248, 248); font-size: 12px;">Card title</h5>
-                                <p class="card-text albumArtists2 text-artist" >name</p>
+                                <h5 class="card-title albumNames4 cut-text" style="color: rgb(255, 248, 248); font-size: 12px;">Card title</h5>
+                                <p class="card-text albumArtists4 text-artist " >name</p>
                               </div>
                           </div>
                         </div>
 
-                        <div class="card albumLinks2" style="width: 160px; cursor: pointer; height: 240px; background-color: #181818;">
-                          <div class="card-content">
-                              <div class="info-badge position-absolute rounded" style="top:2%; left:8%;">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="black" class="bi bi-spotify" viewBox="0 0 16 16">
-                                <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/>
-                                </svg>
-                              </div>
-                              <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="card-img-top p-2 albumImages2" alt="...">
-                              <div class="song-card__play">
-                                <div class="triangle"></div>
-                              </div>
-                              <div class="card-body p-2 mb-2">
-                                <h5 class="card-title albumNames2 cut-text" style="color: rgb(255, 248, 248); font-size: 12px;">Card title</h5>
-                                <p class="card-text albumArtists2 text-artist" >name</p>
-                              </div>
+                        <div class="card albumLinks4" style="width: 160px; cursor: pointer; height: 240px; background-color: #181818;">
+                            <div class="card-content">
+                                <div class="info-badge position-absolute rounded" style="top:2%; left:8%;">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="white" class="bi bi-spotify" viewBox="0 0 16 16">
+                                  <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/>
+                                  </svg>
+                                </div>
+                                <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="card-img-top p-2 albumImages4" alt="...">
+                                <div class="song-card__play">
+                                  <div class="triangle"></div>
+                                </div>
+                                <div class="card-body p-2 mb-2">
+                                  <h5 class="card-title albumNames4 cut-text" style="color: rgb(255, 248, 248); font-size: 12px;">Card title</h5>
+                                  <p class="card-text albumArtists4 text-artist" >name</p>
+                                </div>
+                            </div>
                           </div>
-                        </div>
-
-                        <div class="card albumLinks2" style="width: 160px; cursor: pointer; height: 240px; background-color: #181818;">
-                          <div class="card-content">
-                              <div class="info-badge position-absolute rounded" style="top:2%; left:8%;">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="white" class="bi bi-spotify" viewBox="0 0 16 16">
-                                <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/>
-                                </svg>
-                              </div>
-                              <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="card-img-top p-2 albumImages2" alt="...">
-                              <div class="song-card__play">
-                                <div class="triangle"></div>
-                              </div>
-                              <div class="card-body p-2 mb-2">
-                                <h5 class="card-title albumNames2 cut-text" style="color: rgb(255, 248, 248); font-size: 12px;">Card title</h5>
-                                <p class="card-text albumArtists2 text-artist" >name</p>
-                              </div>
+                        
+                          <div class="card albumLinks4" style="width: 160px; cursor: pointer; height: 240px; background-color: #181818;">
+                            <div class="card-content">
+                                <div class="info-badge position-absolute rounded" style="top:2%; left:8%;">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="white" class="bi bi-spotify" viewBox="0 0 16 16">
+                                  <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/>
+                                  </svg>
+                                </div>
+                                <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="card-img-top p-2 albumImages4" alt="...">
+                                <div class="song-card__play">
+                                  <div class="triangle"></div>
+                                </div>
+                                <div class="card-body p-2 mb-2">
+                                  <h5 class="card-title albumNames4 cut-text" style="color: rgb(255, 248, 248); font-size: 12px;">Card title</h5>
+                                  <p class="card-text albumArtists4 text-artist" >name</p>
+                                </div>
+                            </div>
                           </div>
-                        </div>
 
-                        <div class="card albumLinks2" style="width: 160px; cursor: pointer; height: 240px; background-color: #181818;">
-                          <div class="card-content">
-                              <div class="info-badge position-absolute rounded" style="top:2%; left:8%;">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="white" class="bi bi-spotify" viewBox="0 0 16 16">
-                                <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/>
-                                </svg>
-                              </div>
-                              <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="card-img-top p-2 albumImages2" alt="...">
-                              <div class="song-card__play">
-                                <div class="triangle"></div>
-                              </div>
-                              <div class="card-body p-2 mb-2">
-                                <h5 class="card-title albumNames2 cut-text" style="color: rgb(255, 248, 248); font-size: 12px;">Card title</h5>
-                                <p class="card-text albumArtists2 text-artist" >name</p>
-                              </div>
+                          <div class="card albumLinks4" style="width: 160px; cursor: pointer; height: 240px; background-color: #181818;">
+                            <div class="card-content">
+                                <div class="info-badge position-absolute rounded" style="top:2%; left:8%;">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="white" class="bi bi-spotify" viewBox="0 0 16 16">
+                                  <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/>
+                                  </svg>
+                                </div>
+                                <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="card-img-top p-2 albumImages4" alt="...">
+                                <div class="song-card__play">
+                                  <div class="triangle"></div>
+                                </div>
+                                <div class="card-body p-2 mb-2">
+                                  <h5 class="card-title albumNames4 cut-text" style="color: rgb(255, 248, 248); font-size: 12px;">Card title</h5>
+                                  <p class="card-text albumArtists4 text-artist" >name</p>
+                                </div>
+                            </div>
                           </div>
-                        </div>
 
-                        <div class="card albumLinks2" style="width: 160px; cursor: pointer; height: 240px; background-color: #181818;">
-                          <div class="card-content">
-                              <div class="info-badge position-absolute rounded" style="top:2%; left:8%;">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="white" class="bi bi-spotify" viewBox="0 0 16 16">
-                                <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/>
-                                </svg>
-                              </div>
-                              <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="card-img-top p-2 albumImages2" alt="...">
-                              <div class="song-card__play">
-                                <div class="triangle"></div>
-                              </div>
-                              <div class="card-body p-2 mb-2">
-                                <h5 class="card-title albumNames2 cut-text" style="color: rgb(255, 248, 248); font-size: 12px;">Card title</h5>
-                                <p class="card-text albumArtists2 text-artist" >name</p>
-                              </div>
+                          <div class="card albumLinks4" style="width: 160px; cursor: pointer; height: 240px; background-color: #181818;">
+                            <div class="card-content">
+                                <div class="info-badge position-absolute rounded" style="top:2%; left:8%;">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="white" class="bi bi-spotify" viewBox="0 0 16 16">
+                                  <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/>
+                                  </svg>
+                                </div>
+                                <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="card-img-top p-2 albumImages4" alt="...">
+                                <div class="song-card__play">
+                                  <div class="triangle"></div>
+                                </div>
+                                <div class="card-body p-2 mb-2">
+                                  <h5 class="card-title albumNames4 cut-text" style="color: rgb(255, 248, 248); font-size: 12px;">Card title</h5>
+                                  <p class="card-text albumArtists4 text-artist" >name</p>
+                                </div>
+                            </div>
                           </div>
-                        </div>
 
+                          <div class="card albumLinks4" style="width: 160px; cursor: pointer; height: 240px; background-color: #181818;">
+                            <div class="card-content">
+                                <div class="info-badge position-absolute rounded" style="top:2%; left:8%;">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="white" class="bi bi-spotify" viewBox="0 0 16 16">
+                                  <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/>
+                                  </svg>
+                                </div>
+                                <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="card-img-top p-2 albumImages4" alt="...">
+                                <div class="song-card__play">
+                                  <div class="triangle"></div>
+                                </div>
+                                <div class="card-body p-2 mb-2">
+                                  <h5 class="card-title albumNames4 cut-text" style="color: rgb(255, 248, 248); font-size: 12px;">Card title</h5>
+                                  <p class="card-text albumArtists4 text-artist" >name</p>
+                                </div>
+                            </div>
+                          </div>
+
+                          <div class="card albumLinks4" style="width: 160px; cursor: pointer; height: 240px; background-color: #181818;">
+                            <div class="card-content">
+                                <div class="info-badge position-absolute rounded" style="top:2%; left:8%;">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="white" class="bi bi-spotify" viewBox="0 0 16 16">
+                                  <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/>
+                                  </svg>
+                                </div>
+                                <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="card-img-top p-2 albumImages4" alt="...">
+                                <div class="song-card__play">
+                                  <div class="triangle"></div>
+                                </div>
+                                <div class="card-body p-2 mb-2">
+                                  <h5 class="card-title albumNames4 cut-text" style="color: rgb(255, 248, 248); font-size: 12px;">Card title</h5>
+                                  <p class="card-text albumArtists4 text-artist" >name</p>
+                                </div>
+                            </div>
+                          </div>
+
+                          <div class="card albumLinks4" style="width: 160px; cursor: pointer; height: 240px; background-color: #181818;">
+                            <div class="card-content">
+                                <div class="info-badge position-absolute rounded" style="top:2%; left:8%;">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="white" class="bi bi-spotify" viewBox="0 0 16 16">
+                                  <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/>
+                                  </svg>
+                                </div>
+                                <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="card-img-top p-2 albumImages4" alt="...">
+                                <div class="song-card__play">
+                                  <div class="triangle"></div>
+                                </div>
+                                <div class="card-body p-2 mb-2">
+                                  <h5 class="card-title albumNames4 cut-text" style="color: rgb(255, 248, 248); font-size: 12px;">Card title</h5>
+                                  <p class="card-text albumArtists4 text-artist" >name</p>
+                                </div>
+                            </div>
+                          </div>
+
+                          <div class="card albumLinks4" style="width: 160px; cursor: pointer; height: 240px; background-color: #181818;">
+                            <div class="card-content">
+                                <div class="info-badge position-absolute rounded" style="top:2%; left:8%;">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="white" class="bi bi-spotify" viewBox="0 0 16 16">
+                                  <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/>
+                                  </svg>
+                                </div>
+                                <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="card-img-top p-2 albumImages4" alt="...">
+                                <div class="song-card__play">
+                                  <div class="triangle"></div>
+                                </div>
+                                <div class="card-body p-2 mb-2">
+                                  <h5 class="card-title albumNames4 cut-text" style="color: rgb(255, 248, 248); font-size: 12px;">Card title</h5>
+                                  <p class="card-text albumArtists4 text-artist" >name</p>
+                                </div>
+                            </div>
+                          </div>
+
+                          <div class="card albumLinks4" style="width: 160px; cursor: pointer; height: 240px; background-color: #181818;">
+                            <div class="card-content">
+                                <div class="info-badge position-absolute rounded" style="top:2%; left:8%;">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="white" class="bi bi-spotify" viewBox="0 0 16 16">
+                                  <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/>
+                                  </svg>
+                                </div>
+                                <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="card-img-top p-2 albumImages4" alt="...">
+                                <div class="song-card__play">
+                                  <div class="triangle"></div>
+                                </div>
+                                <div class="card-body p-2 mb-2">
+                                  <h5 class="card-title albumNames4 cut-text" style="color: rgb(255, 248, 248); font-size: 12px;">Card title</h5>
+                                  <p class="card-text albumArtists4 text-artist" >name</p>
+                                </div>
+                            </div>
+                          </div>
+
+                          <div class="card albumLinks4" style="width: 160px; cursor: pointer; height: 240px; background-color: #181818;">
+                            <div class="card-content">
+                                <div class="info-badge position-absolute rounded" style="top:2%; left:8%;">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="white" class="bi bi-spotify" viewBox="0 0 16 16">
+                                  <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/>
+                                  </svg>
+                                </div>
+                                <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="card-img-top p-2 albumImages4" alt="...">
+                                <div class="song-card__play">
+                                  <div class="triangle"></div>
+                                </div>
+                                <div class="card-body p-2 mb-2">
+                                  <h5 class="card-title albumNames4 cut-text" style="color: rgb(255, 248, 248); font-size: 12px;">Card title</h5>
+                                  <p class="card-text albumArtists4 text-artist" >name</p>
+                                </div>
+                            </div>
+                          </div>
+
+                          <div class="card albumLinks4" style="width: 160px; cursor: pointer; height: 240px; background-color: #181818;">
+                            <div class="card-content">
+                                <div class="info-badge position-absolute rounded" style="top:2%; left:8%;">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="white" class="bi bi-spotify" viewBox="0 0 16 16">
+                                  <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/>
+                                  </svg>
+                                </div>
+                                <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="card-img-top p-2 albumImages4" alt="...">
+                                <div class="song-card__play">
+                                  <div class="triangle"></div>
+                                </div>
+                                <div class="card-body p-2 mb-2">
+                                  <h5 class="card-title albumNames4 cut-text" style="color: rgb(255, 248, 248); font-size: 12px;">Card title</h5>
+                                  <p class="card-text albumArtists4 text-artist" >name</p>
+                                </div>
+                            </div>
+                          </div>
+
+                          <div class="card albumLinks4" style="width: 160px; cursor: pointer; height: 240px; background-color: #181818;">
+                            <div class="card-content">
+                                <div class="info-badge position-absolute rounded" style="top:2%; left:8%;">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="white" class="bi bi-spotify" viewBox="0 0 16 16">
+                                  <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/>
+                                  </svg>
+                                </div>
+                                <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="card-img-top p-2 albumImages4" alt="...">
+                                <div class="song-card__play">
+                                  <div class="triangle"></div>
+                                </div>
+                                <div class="card-body p-2 mb-2">
+                                  <h5 class="card-title albumNames4 cut-text" style="color: rgb(255, 248, 248); font-size: 12px;">Card title</h5>
+                                  <p class="card-text albumArtists4 text-artist" >name</p>
+                                </div>
+                            </div>
+                          </div>
+
+                          <div class="card albumLinks4" style="width: 160px; cursor: pointer; height: 240px; background-color: #181818;">
+                            <div class="card-content">
+                                <div class="info-badge position-absolute rounded" style="top:2%; left:8%;">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="white" class="bi bi-spotify" viewBox="0 0 16 16">
+                                  <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/>
+                                  </svg>
+                                </div>
+                                <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="card-img-top p-2 albumImages4" alt="...">
+                                <div class="song-card__play">
+                                  <div class="triangle"></div>
+                                </div>
+                                <div class="card-body p-2 mb-2">
+                                  <h5 class="card-title albumNames4 cut-text" style="color: rgb(255, 248, 248); font-size: 12px;">Card title</h5>
+                                  <p class="card-text albumArtists4 text-artist" >name</p>
+                                </div>
+                            </div>
+                          </div>
+
+                          <div class="card albumLinks4" style="width: 160px; cursor: pointer; height: 240px; background-color: #181818;">
+                            <div class="card-content">
+                                <div class="info-badge position-absolute rounded" style="top:2%; left:8%;">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="white" class="bi bi-spotify" viewBox="0 0 16 16">
+                                  <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/>
+                                  </svg>
+                                </div>
+                                <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="card-img-top p-2 albumImages4" alt="...">
+                                <div class="song-card__play">
+                                  <div class="triangle"></div>
+                                </div>
+                                <div class="card-body p-2 mb-2">
+                                  <h5 class="card-title albumNames4 cut-text" style="color: rgb(255, 248, 248); font-size: 12px;">Card title</h5>
+                                  <p class="card-text albumArtists4 text-artist" >name</p>
+                                </div>
+                            </div>
+                          </div>
+
+                          <div class="card albumLinks4" style="width: 160px; cursor: pointer; height: 240px; background-color: #181818;">
+                            <div class="card-content">
+                                <div class="info-badge position-absolute rounded" style="top:2%; left:8%;">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="white" class="bi bi-spotify" viewBox="0 0 16 16">
+                                  <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/>
+                                  </svg>
+                                </div>
+                                <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="card-img-top p-2 albumImages4" alt="...">
+                                <div class="song-card__play">
+                                  <div class="triangle"></div>
+                                </div>
+                                <div class="card-body p-2 mb-2">
+                                  <h5 class="card-title albumNames4 cut-text" style="color: rgb(255, 248, 248); font-size: 12px;">Card title</h5>
+                                  <p class="card-text albumArtists4 text-artist" >name</p>
+                                </div>
+                            </div>
+                          </div>
+
+                          <div class="card albumLinks4" style="width: 160px; cursor: pointer; height: 240px; background-color: #181818;">
+                            <div class="card-content">
+                                <div class="info-badge position-absolute rounded" style="top:2%; left:8%;">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="white" class="bi bi-spotify" viewBox="0 0 16 16">
+                                  <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/>
+                                  </svg>
+                                </div>
+                                <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="card-img-top p-2 albumImages4" alt="...">
+                                <div class="song-card__play">
+                                  <div class="triangle"></div>
+                                </div>
+                                <div class="card-body p-2 mb-2">
+                                  <h5 class="card-title albumNames4 cut-text" style="color: rgb(255, 248, 248); font-size: 12px;">Card title</h5>
+                                  <p class="card-text albumArtists4 text-artist" >name</p>
+                                </div>
+                            </div>
+                          </div>
+
+                      </div>
+                  </div>
+                </section>
+
+                <section>
+                    <div class="pt-5 mt-5">
+  
                     </div>
-                  </section>
+                </section>
 
-                  <!--Song to try to section-->
-                <div class="mb-3 pl-2"><h5>Albums to try</h5></div>
-                  <section>
-                    <div class="container mb-3 ml-0 mr-0 pl-1 pr-0">
-                        <div class="row row col-lg-10 col-xl-12 mb-3 ml-0 mr-0 pl-1 pr-0" style="gap: 9px;" id="tryThis">
-
-                          <div class="card albumLinks3" style="width: 160px; cursor: pointer; height: 240px; background-color: #181818;">
-                            <div class="card-content">
-                                <div class="info-badge position-absolute rounded" style="top:2%; left:8%;">
-                                  <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="white" class="bi bi-spotify" viewBox="0 0 16 16">
-                                  <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/>
-                                  </svg>
-                                </div>
-                                <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="card-img-top p-2 albumImages3" alt="...">
-                                <div class="song-card__play">
-                                  <div class="triangle"></div>
-                                </div>
-                                <div class="card-body p-2 mb-2">
-                                  <h5 class="card-title albumNames3 cut-text" style="color: rgb(255, 248, 248); font-size: 12px;">Card title</h5>
-                                  <p class="card-text albumArtists3 text-artist" >name</p>
-                                </div>
-                            </div>
-                          </div>
-
-                          <div class="card albumLinks3" style="width: 160px; cursor: pointer; height: 240px; background-color: #181818;">
-                            <div class="card-content">
-                                <div class="info-badge position-absolute rounded" style="top:2%; left:8%;">
-                                  <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="black" class="bi bi-spotify" viewBox="0 0 16 16">
-                                  <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/>
-                                  </svg>
-                                </div>
-                                <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="card-img-top p-2 albumImages3" alt="...">
-                                <div class="song-card__play">
-                                  <div class="triangle"></div>
-                                </div>
-                                <div class="card-body p-2 mb-2">
-                                  <h5 class="card-title albumNames3 cut-text" style="color: rgb(255, 248, 248); font-size: 12px;">Card title</h5>
-                                  <p class="card-text albumArtists3 text-artist" >name</p>
-                                </div>
-                            </div>
-                          </div>
-
-                          <div class="card albumLinks3" style="width: 160px; cursor: pointer; height: 240px; background-color: #181818;">
-                            <div class="card-content">
-                                <div class="info-badge position-absolute rounded" style="top:2%; left:8%;">
-                                  <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="white" class="bi bi-spotify" viewBox="0 0 16 16">
-                                  <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/>
-                                  </svg>
-                                </div>
-                                <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="card-img-top p-2 albumImages3" alt="...">
-                                <div class="song-card__play">
-                                  <div class="triangle"></div>
-                                </div>
-                                <div class="card-body p-2 mb-2">
-                                  <h5 class="card-title albumNames3 cut-text" style="color: rgb(255, 248, 248); font-size: 12px;">Card title</h5>
-                                  <p class="card-text albumArtists3 text-artist" >name</p>
-                                </div>
-                            </div>
-                          </div>
-
-                          <div class="card albumLinks3" style="width: 160px; cursor: pointer; height: 240px; background-color: #181818;">
-                            <div class="card-content">
-                                <div class="info-badge position-absolute rounded" style="top:2%; left:8%;">
-                                  <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="black" class="bi bi-spotify" viewBox="0 0 16 16">
-                                  <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/>
-                                  </svg>
-                                </div>
-                                <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="card-img-top p-2 albumImages3" alt="...">
-                                <div class="song-card__play">
-                                  <div class="triangle"></div>
-                                </div>
-                                <div class="card-body p-2 mb-2">
-                                  <h5 class="card-title albumNames3 cut-text" style="color: rgb(255, 248, 248); font-size: 12px;">Card title</h5>
-                                  <p class="card-text albumArtists3 text-artist" >name</p>
-                                </div>
-                            </div>
-                          </div>
-
-                          <div class="card albumLinks3" style="width: 160px; cursor: pointer; height: 240px; background-color: #181818;">
-                            <div class="card-content">
-                                <div class="info-badge position-absolute rounded" style="top:2%; left:8%;">
-                                  <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="black" class="bi bi-spotify" viewBox="0 0 16 16">
-                                  <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/>
-                                  </svg>
-                                </div>
-                                <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="card-img-top p-2 albumImages3" alt="...">
-                                <div class="song-card__play">
-                                  <div class="triangle"></div>
-                                </div>
-                                <div class="card-body p-2 mb-2">
-                                  <h5 class="card-title albumNames3 cut-text" style="color: rgb(255, 248, 248); font-size: 12px;">Card title</h5>
-                                  <p class="card-text albumArtists3 text-artist" >name</p>
-                                </div>
-                            </div>
-                          </div>
-
-                          <div class="card albumLinks3" style="width: 160px; cursor: pointer; height: 240px; background-color: #181818;">
-                            <div class="card-content">
-                                <div class="info-badge position-absolute rounded" style="top:2%; left:8%;">
-                                  <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="black" class="bi bi-spotify" viewBox="0 0 16 16">
-                                  <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/>
-                                  </svg>
-                                </div>
-                                <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="card-img-top p-2 albumImages3" alt="...">
-                                <div class="song-card__play">
-                                  <div class="triangle"></div>
-                                </div>
-                                <div class="card-body p-2 mb-2">
-                                  <h5 class="card-title albumNames3 cut-text" style="color: rgb(255, 248, 248); font-size: 12px;">Card title</h5>
-                                  <p class="card-text albumArtists3 text-artist" >name</p>
-                                </div>
-                            </div>
-                          </div>
-
-                          <div class="card albumLinks3" style="width: 160px; cursor: pointer; height: 240px; background-color: #181818;">
-                            <div class="card-content">
-                                <div class="info-badge position-absolute rounded" style="top:2%; left:8%;">
-                                  <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="black" class="bi bi-spotify" viewBox="0 0 16 16">
-                                  <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/>
-                                  </svg>
-                                </div>
-                                <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="card-img-top p-2 albumImages3" alt="...">
-                                <div class="song-card__play">
-                                  <div class="triangle"></div>
-                                </div>
-                                <div class="card-body p-2 mb-2">
-                                  <h5 class="card-title albumNames3 cut-text" style="color: rgb(255, 248, 248); font-size: 12px;">Card title</h5>
-                                  <p class="card-text albumArtists3 text-artist" >name</p>
-                                </div>
-                            </div>
-                          </div>
-
-                          <div class="card albumLinks3" style="width: 160px; cursor: pointer; height: 240px; background-color: #181818;">
-                            <div class="card-content">
-                                <div class="info-badge position-absolute rounded" style="top:2%; left:8%;">
-                                  <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="white" class="bi bi-spotify" viewBox="0 0 16 16">
-                                  <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/>
-                                  </svg>
-                                </div>
-                                <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="card-img-top p-2 albumImages3" alt="...">
-                                <div class="song-card__play">
-                                  <div class="triangle"></div>
-                                </div>
-                                <div class="card-body p-2 mb-2">
-                                  <h5 class="card-title albumNames3 cut-text" style="color: rgb(255, 248, 248); font-size: 12px;">Card title</h5>
-                                  <p class="card-text albumArtists3 text-artist" >name</p>
-                                </div>
-                            </div>
-                          </div>
-
-                        </div>
-                    </div>
-                  </section>
-                  <!--/Songs of this Week section-->
-
-                  <div class="mb-3 pl-2"><h5>Albums of this week</h5></div>
-                  <section>
-                    <div class="container mb-3 ml-0 mr-0 pl-1 pr-0">
-                        <div class="row row col-lg-10 col-xl-12 mb-3 ml-0 mr-0 pl-1 pr-0" style="gap: 9px;" id="tryThis">
-
-                          <div class="card albumLinks4" style="width: 160px; cursor: pointer; height: 240px; background-color: #181818;">
-                            <div class="card-content">
-                                <div class="info-badge position-absolute rounded" style="top:2%; left:8%;">
-                                  <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="white" class="bi bi-spotify" viewBox="0 0 16 16">
-                                  <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/>
-                                  </svg>
-                                </div>
-                                <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="card-img-top p-2 albumImages4" alt="...">
-                                <div class="song-card__play">
-                                  <div class="triangle"></div>
-                                </div>
-                                <div class="card-body p-2 mb-2">
-                                  <h5 class="card-title albumNames4 cut-text" style="color: rgb(255, 248, 248); font-size: 12px;">Card title</h5>
-                                  <p class="card-text albumArtists4 text-artist" >name</p>
-                                </div>
-                            </div>
-                          </div>
-
-                          <div class="card albumLinks4" style="width: 160px; cursor: pointer; height: 240px; background-color: #181818;">
-                            <div class="card-content">
-                                <div class="info-badge position-absolute rounded" style="top:2%; left:8%;">
-                                  <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="white" class="bi bi-spotify" viewBox="0 0 16 16">
-                                  <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/>
-                                  </svg>
-                                </div>
-                                <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="card-img-top p-2 albumImages4" alt="...">
-                                <div class="song-card__play">
-                                  <div class="triangle"></div>
-                                </div>
-                                <div class="card-body p-2 mb-2">
-                                  <h5 class="card-title albumNames4 cut-text" style="color: rgb(255, 248, 248); font-size: 12px;">Card title</h5>
-                                  <p class="card-text albumArtists4 text-artist" >name</p>
-                                </div>
-                            </div>
-                          </div>
-
-                          <div class="card albumLinks4" style="width: 160px; cursor: pointer; height: 240px; background-color: #181818;">
-                            <div class="card-content">
-                                <div class="info-badge position-absolute rounded" style="top:2%; left:8%;">
-                                  <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="white" class="bi bi-spotify" viewBox="0 0 16 16">
-                                  <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/>
-                                  </svg>
-                                </div>
-                                <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="card-img-top p-2 albumImages4" alt="...">
-                                <div class="song-card__play">
-                                  <div class="triangle"></div>
-                                </div>
-                                <div class="card-body p-2 mb-2">
-                                  <h5 class="card-title albumNames4 cut-text" style="color: rgb(255, 248, 248); font-size: 12px;">Card title</h5>
-                                  <p class="card-text albumArtists4 text-artist" >name</p>
-                                </div>
-                            </div>
-                          </div>
-
-                          <div class="card albumLinks4" style="width: 160px; cursor: pointer; height: 240px; background-color: #181818;">
-                            <div class="card-content">
-                                <div class="info-badge position-absolute rounded" style="top:2%; left:8%;">
-                                  <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="white" class="bi bi-spotify" viewBox="0 0 16 16">
-                                  <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/>
-                                  </svg>
-                                </div>
-                                <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="card-img-top p-2 albumImages4" alt="...">
-                                <div class="song-card__play">
-                                  <div class="triangle"></div>
-                                </div>
-                                <div class="card-body p-2 mb-2">
-                                  <h5 class="card-title albumNames4 cut-text" style="color: rgb(255, 248, 248); font-size: 12px;">Card title</h5>
-                                  <p class="card-text albumArtists4 text-artist" >name</p>
-                                </div>
-                            </div>
-                          </div>
-
-                          <div class="card albumLinks4" style="width: 160px; cursor: pointer; height: 240px; background-color: #181818;">
-                            <div class="card-content">
-                                <div class="info-badge position-absolute rounded" style="top:2%; left:8%;">
-                                  <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="white" class="bi bi-spotify" viewBox="0 0 16 16">
-                                  <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/>
-                                  </svg>
-                                </div>
-                                <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="card-img-top p-2 albumImages4" alt="...">
-                                <div class="song-card__play">
-                                  <div class="triangle"></div>
-                                </div>
-                                <div class="card-body p-2 mb-2">
-                                  <h5 class="card-title albumNames4 cut-text" style="color: rgb(255, 248, 248); font-size: 12px;">Card title</h5>
-                                  <p class="card-text albumArtists4 text-artist" >name</p>
-                                </div>
-                            </div>
-                          </div>
-                          
-                          <div class="card albumLinks4" style="width: 160px; cursor: pointer; height: 240px; background-color: #181818;">
-                            <div class="card-content">
-                                <div class="info-badge position-absolute rounded" style="top:2%; left:8%;">
-                                  <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="white" class="bi bi-spotify" viewBox="0 0 16 16">
-                                  <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/>
-                                  </svg>
-                                </div>
-                                <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="card-img-top p-2 albumImages4" alt="...">
-                                <div class="song-card__play">
-                                  <div class="triangle"></div>
-                                </div>
-                                <div class="card-body p-2 mb-2">
-                                  <h5 class="card-title albumNames4 cut-text" style="color: rgb(255, 248, 248); font-size: 12px;">Card title</h5>
-                                  <p class="card-text albumArtists4 text-artist" >name</p>
-                                </div>
-                            </div>
-                          </div>
-
-                          <div class="card albumLinks4" style="width: 160px; cursor: pointer; height: 240px; background-color: #181818;">
-                            <div class="card-content">
-                                <div class="info-badge position-absolute rounded" style="top:2%; left:8%;">
-                                  <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="white" class="bi bi-spotify" viewBox="0 0 16 16">
-                                  <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/>
-                                  </svg>
-                                </div>
-                                <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="card-img-top p-2 albumImages4" alt="...">
-                                <div class="song-card__play">
-                                  <div class="triangle"></div>
-                                </div>
-                                <div class="card-body p-2 mb-2">
-                                  <h5 class="card-title albumNames4 cut-text" style="color: rgb(255, 248, 248); font-size: 12px;">Card title</h5>
-                                  <p class="card-text albumArtists4 text-artist" >name</p>
-                                </div>
-                            </div>
-                          </div>
-
-                          <div class="card albumLinks4" style="width: 160px; cursor: pointer; height: 240px; background-color: #181818;">
-                            <div class="card-content">
-                                <div class="info-badge position-absolute rounded" style="top:2%; left:8%;">
-                                  <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="white" class="bi bi-spotify" viewBox="0 0 16 16">
-                                  <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/>
-                                  </svg>
-                                </div>
-                                <img src="https://render.fineartamerica.com/images/rendered/default/poster/8/8/break/images/artworkimages/medium/1/the-beatles-abbey-road-paul-meijering.jpg" class="card-img-top p-2 albumImages4" alt="...">
-                                <div class="song-card__play">
-                                  <div class="triangle"></div>
-                                </div>
-                                <div class="card-body p-2 mb-2">
-                                  <h5 class="card-title albumNames4 cut-text" style="color: rgb(255, 248, 248); font-size: 12px;">Card title</h5>
-                                  <p class="card-text albumArtists4 text-artist " >name</p>
-                                </div>
-                            </div>
-                          </div>
-
-                        </div>
-                    </div>
-                  </section>
-
-                  <section>
-                        <div class="pt-5 mt-5">
-      
-                        </div>
-                    </section>
-            </div>   
+               </div>
+               
         </div>
     </div>
     <footer style="background-color: #181818;">
@@ -1049,41 +849,44 @@
         </div>
 
      
-  </footer>
+    </footer>
 
   <script>
+
     let isLoggedIn = false;
     const LOGIN_BUTTON_HOMEPAGE = document.getElementById("loginButtonHomepage");
 
-LOGIN_BUTTON_HOMEPAGE.addEventListener("click", () => {
-    window.location.href = './login.html';
-})
+    LOGIN_BUTTON_HOMEPAGE.addEventListener("click", () => {
+            window.location.href = './login.html';
+        })
 
-const params = new URLSearchParams(window.location.search)
-const user = params.get('u')
-console.log("User: " + user)
-const LOGIN_USER_DIV = document.getElementById("loginUserDiv");
+    const params = new URLSearchParams(window.location.search)
+    const user = params.get('u')
+    console.log("User: " + user)
+    const LOGIN_USER_DIV = document.getElementById("loginUserDiv");
 
-const setUser = (username) => {
-    LOGIN_USER_DIV.innerHTML = `
-    <div class="dropdown mr-5">
-  <button class="userDiv btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
-    <i class="bi bi-person-circle px-0 mr-2"></i>
-    ${username}
-  </button>
-  <div class="dropdown-menu">
-    <a class="dropdown-item text-white" href="index.html">Sign Out</a>
-  </div>
-</div>
-    `
-}
+    const setUser = (username) => {
+        LOGIN_USER_DIV.innerHTML = `
+        <div class="dropdown mr-5">
+    <button class="userDiv btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+        <i class="bi bi-person-circle px-0 mr-2"></i>
+        ${username}
+    </button>
+    <div class="dropdown-menu">
+        <a class="dropdown-item text-white" href="index.html">Sign Out</a>
+    </div>
+    </div>
+        `
+    }
 
-if (user) {
-    isLoggedIn = true;
-    LOGIN_USER_DIV.innerHTML = "";
-    setUser(user);
-}
+    if (user) {
+        isLoggedIn = true;
+        LOGIN_USER_DIV.innerHTML = "";
+        setUser(user);
+    }
 
+    const parametrs = new URLSearchParams(window.location.search)
+    const query = params.get('q')
 
 
     const options = {
@@ -1094,109 +897,9 @@ if (user) {
         "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
       },
     };
-
-    // FETCH 1
+    //FETCH 
     fetch(
-      "https://striveschool-api.herokuapp.com/api/deezer/search?q=rock",
-      options
-    )
-      .then((response) => response.json())
-      .then((response) => {
-        const albums = response.data;
-        console.log(albums);
-        const ALBUMIMAGES = document.getElementsByClassName("albumImages");
-        const ALBUMNAMES = document.getElementsByClassName("albumNames");
-        const ALBUMSARTISTS = document.getElementsByClassName("albumArtists");
-        for (let i = 0; i < ALBUMIMAGES.length; i++) {
-          ALBUMIMAGES[i].src = albums[i].album.cover_medium;
-          ALBUMNAMES[i].innerText = albums[i].album.title;
-        //   ALBUMSARTISTS[i].innerText = albums[i].artist.name;
-        }
-
-        const ALBUMBUTTONS = document.getElementsByClassName("albumLinks");
-        for (let i = 0; i < ALBUMBUTTONS.length; i++) {
-          ALBUMBUTTONS[i].addEventListener("click", () => {
-            if (isLoggedIn) {
-                window.location.href =
-              "./album.html?q=" + albums[i].album.id.toString() + "&u=" + user;
-            } else {
-                window.location.href =
-              "./album.html?q=" + albums[i].album.id.toString();
-            }
-          });
-        }
-      })
-      .catch((err) => console.error(err));
-
-    //   FETCH 2
-      fetch(
-      "https://striveschool-api.herokuapp.com/api/deezer/search?q=queen",
-      options
-    )
-      .then((response) => response.json())
-      .then((response) => {
-        const albums = response.data;
-        console.log(albums);
-        const ALBUMIMAGES = document.getElementsByClassName("albumImages2");
-        const ALBUMNAMES = document.getElementsByClassName("albumNames2");
-        const ALBUMSARTISTS = document.getElementsByClassName("albumArtists2");
-        for (let i = 0; i < ALBUMIMAGES.length; i++) {
-          ALBUMIMAGES[i].src = albums[i].album.cover_medium;
-          ALBUMNAMES[i].innerText = albums[i].album.title;
-          ALBUMSARTISTS[i].innerText = albums[i].artist.name;
-        }
-
-        const ALBUMBUTTONS = document.getElementsByClassName("albumLinks2");
-        for (let i = 0; i < ALBUMBUTTONS.length; i++) {
-          ALBUMBUTTONS[i].addEventListener("click", () => {
-            if (isLoggedIn) {
-                window.location.href =
-              "./album.html?q=" + albums[i].album.id.toString() + "&u=" + user;
-            } else {
-                window.location.href =
-              "./album.html?q=" + albums[i].album.id.toString();
-            }
-          });
-        }
-      })
-      .catch((err) => console.error(err));
-
-      //   FETCH 3
-      fetch(
-      "https://striveschool-api.herokuapp.com/api/deezer/search?q=beatles",
-      options
-    )
-      .then((response) => response.json())
-      .then((response) => {
-        const albums = response.data;
-        console.log(albums);
-        const ALBUMIMAGES = document.getElementsByClassName("albumImages3");
-        const ALBUMNAMES = document.getElementsByClassName("albumNames3");
-        const ALBUMSARTISTS = document.getElementsByClassName("albumArtists3");
-        for (let i = 0; i < ALBUMIMAGES.length; i++) {
-          ALBUMIMAGES[i].src = albums[i].album.cover_medium;
-          ALBUMNAMES[i].innerText = albums[i].album.title;
-          ALBUMSARTISTS[i].innerText = albums[i].artist.name;
-        }
-
-        const ALBUMBUTTONS = document.getElementsByClassName("albumLinks3");
-        for (let i = 0; i < ALBUMBUTTONS.length; i++) {
-          ALBUMBUTTONS[i].addEventListener("click", () => {
-            if (isLoggedIn) {
-                window.location.href =
-              "./album.html?q=" + albums[i].album.id.toString() + "&u=" + user;
-            } else {
-                window.location.href =
-              "./album.html?q=" + albums[i].album.id.toString();
-            }
-          });
-        }
-      })
-      .catch((err) => console.error(err));
-
-      //   FETCH 4
-      fetch(
-      "https://striveschool-api.herokuapp.com/api/deezer/search?q=bowie",
+      "https://striveschool-api.herokuapp.com/api/deezer/search?q=" + query,
       options
     )
       .then((response) => response.json())
@@ -1211,7 +914,6 @@ if (user) {
           ALBUMNAMES[i].innerText = albums[i].album.title;
           ALBUMSARTISTS[i].innerText = albums[i].artist.name;
         }
-
         const ALBUMBUTTONS = document.getElementsByClassName("albumLinks4");
         for (let i = 0; i < ALBUMBUTTONS.length; i++) {
           ALBUMBUTTONS[i].addEventListener("click", () => {
@@ -1227,13 +929,12 @@ if (user) {
       })
       .catch((err) => console.error(err));
 
-      
       const SEARCH_CLICK = document.getElementsByClassName("openSearch")[0];
       const INPUT_BAR = document.getElementsByClassName("searchInputBar")[0];
       const INPUT_TEXT = document.getElementById("searchBar");
       const INPUT_BUTTON = document.getElementById("searchButton");
 
-      SEARCH_CLICK.addEventListener("click", () => {
+       SEARCH_CLICK.addEventListener("click", () => {
         INPUT_BAR.classList.toggle("d-none");
         SEARCH_CLICK.classList.toggle("d-none");
       })
@@ -1244,12 +945,10 @@ if (user) {
 
       const searchArtist = (query) => {
        
-        window.location.href =
-              "./search.html?q=" + query + "&u=" + user;
-      }
+       window.location.href =
+             "./search.html?q=" + query + "&u=" + user;
+     }
 
-       
-    
 </script>
     
 
