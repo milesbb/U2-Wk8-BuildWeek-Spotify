@@ -245,7 +245,7 @@ h5 {
                               <div class="carousel-inner ">
                                 <div class="carousel-item active" >
                                  
-                              <img class="d-flex " id="albumId" style="max-width:1020px;" src="https://images.unsplash.com/photo-1446057032654-9d8885db76c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2128&q=80" alt="First slide">
+                              <img class="d-flex " id="albumId" style="max-width:100%; object-fit:cover;" src="https://images.unsplash.com/photo-1446057032654-9d8885db76c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2128&q=80" alt="First slide">
                                
 
                             
@@ -269,7 +269,7 @@ h5 {
                                 </div>
 
                                 <div class="mt-1">
-                                  <h1 style="font-size:54px;font-family:sans-serif;font-weight:bold;">Queen</h1>
+                                  <h1 class="nameArtist" style="font-size:54px;font-family:sans-serif;font-weight:bold;">Queen</h1>
                                 </div>
 
                                 <div class="mt-4">
@@ -314,14 +314,26 @@ h5 {
 
                         <div class="mt-4 ">
                           <h5 class="pl-3">Popular</h5>
-                          <div>
-                    </div>
-                    
+                          <div id="table-info" class="col-12 justify-content-start">
+                            <div class=" d-flex bd-highlight">
+                                <div class="number pl-3 bd-highlight text-monospace" style="font-size:13px; color:#d3d3d3">#</div>
+                                <div class="title-artist pl-3 bd-highlight">
+                                    <div style="font-size: 11px;">
+                                       TITLE
+                                    </div>
+                                </div>
+                                <div class="time ml-auto mb-2 pr-4 bd-highlight" style="font-size:12px; color:#d3d3d3">  
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+                                    <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                                    <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+                                </svg>
+                                </div>
+                            </div>
+                            <hr class="mt-1"style="border: 0.25px solid rgba(137, 137, 137, 0.578);">
+                        </div>
                     
                        
-                        <div class="col-md-8 col-lg-8 col-xl-8 mt-5 pt-5 title-section">
-
-                        </div>
+                  
                       </div>
                     </div>
   
@@ -463,38 +475,24 @@ h5 {
     .then(response=> {
       const artist = response;
       console.log(response)
-      console.log(artist);
+      // console.log(artist);
 
       const ALBUMARTIST = document.getElementById("albumId");
       const NAMEArtist  =document.getElementsByClassName("nameArtist")
       ALBUMARTIST.src = artist.picture_xl
 
      NAMEArtist[0].innerText = artist.name
+
+ 
+
                                                      
     })
 
-    // fetch(
-    //   "https://striveschool-api.herokuapp.com/api/deezer/artist/"+id,
-    //   artists
-    // )
-    // .then((response) => response.json())
-    // .then(data => {
-    //   // const artist = response;
-    //   console.log(data)
+   
 
-    //   const ALBUMARTISTCOVER = document.querySelector(".coverImg");
-    //   const NAMEArtist  =document.getElementsByClassName("nameArtist")
-    //   ALBUMARTISTCOVER.innerHTML = `
-    //                                     <img id="${data.id}" src="${artist.picture_big}"                                         
-    //                                     />
-    //                                `
 
-    //  NAMEArtist.innerHTML = `
-    //                            ${artist.name}
-    //                                `               
-                                   
-                                   
-    // })
+    
+    
 
     </script>
     <!-- Optional JavaScript; choose one of the two! -->
