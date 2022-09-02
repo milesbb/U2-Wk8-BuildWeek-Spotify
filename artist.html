@@ -59,7 +59,7 @@ footer {
   right: 0;
   left: 0;
   justify-content: space-between;
-  margin-top: 50px;
+  /* margin-top: 50px; */
   background-color: rgb(66, 60, 72);
   padding-top: 5px;
   position: fixed;
@@ -145,9 +145,15 @@ h5 {
 } */
 
 .listLi >li:hover{
-  background-color:#fff;;
+  color:#fff;;
   cursor: pointer;
-  font-size:20px;
+  font-weight: bold;
+}
+
+.footerClass *:hover{
+  color:white;
+  cursor: pointer;
+  font-weight: 600;
 }
 
 
@@ -167,47 +173,47 @@ h5 {
                 <!--section-->
                 <div class="left-section ml-2 mt-4">
                     <div class="left-menu mb-1 position-relative">
-                        <i class="bi bi-house-door side-icons"></i>
+                        <i class="bi bi-house-door side-icons" style="cursor:pointer"></i>
                         <span class="position-absolute font-weight-bold" style="left:40px; top:5px; font-size: 12px;cursor:pointer">Home</span>
                     </div>
                     <div class="left-menu mb-1 search-div position-relative">
-                        <i class="bi bi-search side-icons"></i>
+                        <i class="bi bi-search side-icons"style="cursor:pointer"></i>
                             <span class="position-absolute font-weight-bold" style="left:40px; top:5px; font-size: 10px;cursor:pointer">Search</span>
                     </div>
                     <div class="left-menu mb-1  position-relative">
-                        <i class="bi bi-collection side-icons"></i>
+                        <i class="bi bi-collection side-icons"style="cursor:pointer"></i>
                         <span class="position-absolute font-weight-bold" style="left:40px; top:5px; font-size: 10px;cursor:pointer">Your Library</span>
                     </div>
                     <div class="left-menu mb-1 mt-3 position-relative">
-                        <i class="bi bi-plus-square-fill"></i>
+                        <i class="bi bi-plus-square-fill"style="cursor:pointer"></i>
                         <span class="position-absolute font-weight-bold" style="left:40px; top:8px; font-size: 10px;cursor:pointer">Create Playlist</span>
                     </div>
                     <div class="left-menu mb-3 position-relative">
-                        <i class="bi bi-bookmark-heart-fill" style="font-size:px;"></i>
+                        <i class="bi bi-bookmark-heart-fill" style="cursor:pointer"></i>
                         <span class="position-absolute font-weight-bold" style="left:40px; top:8px; font-size: 10px;cursor:pointer">Liked songs</span>
                     </div>
                     <hr>
                     <section class="side-playlists" style="background-color: rgb(0, 0, 0);">
                         <div class="container mb-5" >
                             <div class="row">
-                                  <ul class="list listLi" style="list-style-type:none; margin-left:-35px;" >
-                                    <li class="item mb-1 "style="font-size: 12px;color: rgb(92, 92, 92);">Funky Heavy Bluesy</li>
-                                    <li class="item mb-1" style="font-size: 12px;color: rgb(92, 92, 92); ">Your To Songs 2020</li>
-                                    <li class="item mb-1" style="font-size: 12px;color: rgb(92, 92, 92); ">In Love With You</li>
-                                    <li class="item mb-1" style="font-size: 12px;color: rgb(92, 92, 92); ">This Is Rod Stewart</li>
-                                    <li class="item mb-1" style="font-size: 12px;color: rgb(92, 92, 92); ">FRANCHISE ft.Young</li>
-                                    <li class="item mb-1" style="font-size: 12px;color: rgb(92, 92, 92); ">Your Top Songs 2019</li>
-                                    <li class="item mb-1" style="font-size: 12px;color: rgb(92, 92, 92); ">Your Top Songs 2020</li>
-                                    <li class="item mb-1" style="font-size: 12px;color: rgb(92, 92, 92); ">Pallegio</li>
-                                    <li class="item mb-1" style="font-size: 12px;color: rgb(92, 92, 92); ">This Is Joe Bonamassa</li>
-                                    <li class="item mb-1" style="font-size: 12px;color: rgb(92, 92, 92); ">Jun19</li>
-                                    <li class="item mb-1" style="font-size: 12px;color: rgb(92, 92, 92); ">Jack 30th Party 2</li>
-                                    <li class="item mb-1" style="font-size: 12px;color: rgb(92, 92, 92); ">Jack 30th Party </li>
-                                    <li class="item mb-1" style="font-size: 12px;color: rgb(92, 92, 92); ">This Is Opeth</li>
-                                    <li class="item mb-1" style="font-size: 12px;color: rgb(92, 92, 92); ">Metal Ballads</li>
-                                    <li class="item mb-1" style="font-size: 12px;color: rgb(92, 92, 92); ">New Playlist</li>
-                                    <li class="item mb-1" style="font-size: 12px;color: rgb(92, 92, 92); ">Jazz Classics</li>
-                                    <li class="item mb-1 font-weight-bold" style="font-size: 15px;color: rgb(65, 62, 62); ">
+                                  <ul class="list listLi" style="list-style-type:none; margin-left:-35px;color:grey" >
+                                    <li class="item mb-1 "style="font-size:12px;">Funky Heavy Bluesy</li>
+                                    <li class="item mb-1" style="font-size:12px; ">Your To Songs 2020</li>
+                                    <li class="item mb-1" style="font-size:12px; ">In Love With You</li>
+                                    <li class="item mb-1" style="font-size:12px; ">This Is Rod Stewart</li>
+                                    <li class="item mb-1" style="font-size:12px; ">FRANCHISE ft.Young</li>
+                                    <li class="item mb-1" style="font-size:12px; ">Your Top Songs 2019</li>
+                                    <li class="item mb-1" style="font-size:12px; ">Your Top Songs 2020</li>
+                                    <li class="item mb-1" style="font-size:12px; ">Pallegio</li>
+                                    <li class="item mb-1" style="font-size:12px; ">This Is Joe Bonamassa</li>
+                                    <li class="item mb-1" style="font-size:12px; ">Jun19</li>
+                                    <li class="item mb-1" style="font-size:12px; ">Jack 30th Party 2</li>
+                                    <li class="item mb-1" style="font-size:12px; ">Jack 30th Party </li>
+                                    <li class="item mb-1" style="font-size:12px; ">This Is Opeth</li>
+                                    <li class="item mb-1" style="font-size:12px; ">Metal Ballads</li>
+                                    <li class="item mb-1" style="font-size:12px; ">New Playlist</li>
+                                    <li class="item mb-1" style="font-size:12px; ">Jazz Classics</li>
+                                    <li class="item mb-1 font-weight-bold" style="font-size: 15px;margin-bottom: 15px; ">
                                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-circle mr-1" viewBox="0 0 16 16">
                                         <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/>
                                       </svg> 
@@ -245,7 +251,7 @@ h5 {
                               <div class="carousel-inner ">
                                 <div class="carousel-item active" >
                                  
-                              <img class="d-flex " id="albumId" style="min-width:1020px;; object-fit:cover;" src="https://images.unsplash.com/photo-1446057032654-9d8885db76c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2128&q=80" alt="First slide">
+                              <img class="d-flex " id="albumId" style="object-fit:cover;" src="https://images.unsplash.com/photo-1446057032654-9d8885db76c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2128&q=80" alt="First slide">
                                
 
                             
@@ -260,8 +266,8 @@ h5 {
                               </div>
 
                               <div style="position:absolute;top:15px;left:5%;">
-                                <i class="bi bi-arrow-left-circle arrow-icons" style="color:black"></i>
-                                <i class="bi bi-arrow-right-circle arrow-icons" style="color:black"></i>
+                                <i class="bi bi-arrow-left-circle arrow-icons" style="color:black;cursor:pointer"></i>
+                                <i class="bi bi-arrow-right-circle arrow-icons" style="color:black;cursor:pointer"></i>
 
                                 <div class="d-flex" style="margin-top:50px;">
                                   <i class="bi bi-patch-check-fill " style="color:blue;"></i>
@@ -387,14 +393,14 @@ h5 {
 
     </div>
 
-    <div class=" mt-3">
-      <footer class="row" style="background-color: #181818;">
+    <div class="">
+      <footer class="row footerClass" style="background-color: #181818;color:grey;">
         <!--First div-->
        <div class="first-div ">
            <img src="https://cdns-images.dzcdn.net/images/cover/9a20f8b2547cbb74635539c219de3a84/500x500.jpg"
                alt="song image" width="50" height="50"  />
            <p id="id-album-played" style="font-size: 12px;">
-               Another One Bites The Dust - Remastered 2011 <br /><span style="font-size: 9px;">Queen</span>
+               Another One Bites The Dust - Remastered 2011 <br /><span style="font-size: 9px;text-decoration: underline;font-weight: bold;">Queen</span>
            </p>
            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
              <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
