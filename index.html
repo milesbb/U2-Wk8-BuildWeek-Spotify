@@ -265,12 +265,14 @@
                             <span class="position-absolute font-weight-bold" style="left:40px; top:8px; font-size: 12px; cursor: pointer;">Search</span>
                             
                     </div>
+                    <!-- Search Bar -->
                     <div class="searchInputBar d-none greyToWhite input-group mb-3">
                         <input id="searchBar" type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
                         <div class="input-group-append">
                           <button id="searchButton" class="btn btn-outline-secondary" type="button">Go</button>
                         </div>
                       </div>
+                      <!-- END of search bar -->
                     <div class="greyToWhite left-menu mb-3 position-relative">
                         <i class="bi bi-collection side-icons"></i>
                         <span class="position-absolute font-weight-bold" style="left:40px; top:8px; font-size: 12px; cursor: pointer;">Your Library</span>
@@ -339,8 +341,9 @@
                         </div>
                     </nav>
                </div>
+               <!-- END OF navbar -->
 
-               <!--Good morning section-->
+               <!--1 Good morning section-->
                <div class="mb-3 pl-2"><h3>Good morning</h3></div>
                 <section>
                   <div class="d-flex flex-nowrap">
@@ -509,16 +512,11 @@
                             </div>
                         </div>
                     </div>
-
-
-                      
-
                     </div>
-
-                
                 </section>
+                <!--END OF 1 Good morning section-->
               
-                 <!--Recently viewed section-->
+                 <!--2 Recently viewed section-->
                  <div class="mb-3 pl-2"><h5>Recently played</h5></div>
                  <section>
                     <div class="container mb-3 ml-0 mr-0 pl-1 pr-0">
@@ -672,7 +670,9 @@
                     </div>
                   </section>
 
-                  <!--Song to try to section-->
+                  <!--END OF 2 Recently viewed section-->
+
+                  <!--3 Song to try to section-->
                 <div class="mb-3 pl-2"><h5>Albums to try</h5></div>
                   <section>
                     <div class="container mb-3 ml-0 mr-0 pl-1 pr-0">
@@ -825,7 +825,10 @@
                         </div>
                     </div>
                   </section>
-                  <!--/Songs of this Week section-->
+
+                  <!--END OF 3 Song to try to section-->
+
+                  <!--4 Songs of this Week section-->
 
                   <div class="mb-3 pl-2"><h5>Albums of this week</h5></div>
                   <section>
@@ -980,6 +983,8 @@
                     </div>
                   </section>
 
+                  <!--END OF 4 Songs of this Week section-->
+
                   <section>
                         <div class="pt-5 mt-5">
       
@@ -988,6 +993,9 @@
             </div>   
         </div>
     </div>
+
+    <!-- FOOTER 'NOW PLAYING' SECTION WITH AUDIO PLAYER -->
+
     <footer style="background-color: #181818;">
        <!--First div-->
       <div class="first-div">
@@ -1008,6 +1016,7 @@
       <!--Second div-->
 
        <div class="second-div">
+        <!-- audio player -->
             <div class="second-of-second mb-3">
               <audio class="mx-auto" id="audioPlayer" controls autoplay>
               <source src="" type="audio/mpeg">
@@ -1031,10 +1040,13 @@
             <hr style="height:4px; width:100%; border-width:0; border-radius: 20px; color:rgb(255, 255, 255); background-color:rgb(255, 255, 255)">
         </div>
 
+        <!-- END OF AUDIO PLAYER SECTION -->
      
   </footer>
 
   <script>
+
+    // Login status code
     let isLoggedIn = false;
     const LOGIN_BUTTON_HOMEPAGE = document.getElementById("loginButtonHomepage");
 
@@ -1042,11 +1054,13 @@ LOGIN_BUTTON_HOMEPAGE.addEventListener("click", () => {
     window.location.href = './login.html';
 })
 
+// retrieve username from URL
 const params = new URLSearchParams(window.location.search)
 const user = params.get('u')
 console.log("User: " + user)
 const LOGIN_USER_DIV = document.getElementById("loginUserDiv");
 
+// replaces login/sign up buttons with username div
 const setUser = (username) => {
     LOGIN_USER_DIV.innerHTML = `
     <div class="dropdown mr-5">
@@ -1066,13 +1080,16 @@ if (user) {
     LOGIN_USER_DIV.innerHTML = "";
     setUser(user);
 }
+// end of login status code
 
+// audio player variable assigns
     const AUDIO_PLAYER = document.querySelectorAll("#audioPlayer")[0];
     const AUDIO_PLAYER_NAME = document.querySelectorAll("#audio-player-name")[0];
     const AUDIO_PLAYER_ARTIST = document.querySelectorAll("#audio-player-artist")[0];
     const AUDIO_PLAYER_IMAGE = document.querySelectorAll("#audio-player-image")[0];
     const PLAY_BUTTONS = document.querySelectorAll(".song-card__play");
 
+// options object, headers with API key
     const options = {
       method: "GET",
       headers: {
@@ -1082,7 +1099,9 @@ if (user) {
       },
     };
 
-    // FETCH 1
+    // GET Fetch Requests
+
+    // FETCH 1 - for section 1 of cards
     fetch(
       "https://striveschool-api.herokuapp.com/api/deezer/search?q=rock",
       options
@@ -1100,9 +1119,11 @@ if (user) {
         //   ALBUMSARTISTS[i].innerText = albums[i].artist.name;
         }
 
+        // sets onclick events to send user to album page
         const ALBUMBUTTONS = document.querySelectorAll(".albumImages, .albumNames");
         for (let i = 0; i < ALBUMBUTTONS.length; i++) {
           ALBUMBUTTONS[i].addEventListener("click", () => {
+            // if logged in, adds username to URL for page destination
             if (isLoggedIn) {
                 window.location.href =
               "./album.html?q=" + albums[i].album.id.toString() + "&u=" + user;
@@ -1117,7 +1138,7 @@ if (user) {
       })
       .catch((err) => console.error(err));
 
-    //   FETCH 2
+    //   FETCH 2 - for section 2 of cards
       fetch(
       "https://striveschool-api.herokuapp.com/api/deezer/search?q=queen",
       options
@@ -1135,9 +1156,11 @@ if (user) {
           ALBUMSARTISTS[i].innerText = albums[i].artist.name;
         }
 
+        // sets onclick events to send user to album page
         const ALBUMBUTTONS = document.querySelectorAll(".albumImages2, .albumNames2");
         for (let i = 0; i < ALBUMBUTTONS.length; i++) {
           ALBUMBUTTONS[i].addEventListener("click", () => {
+            // if logged in, adds username to URL for page destination
             if (isLoggedIn) {
                 window.location.href =
               "./album.html?q=" + albums[i].album.id.toString() + "&u=" + user;
@@ -1148,6 +1171,7 @@ if (user) {
           });
         }
 
+        // sets event listeners for onhover play buttons
         
         for (let i = 0; i < 8; i++) {
           PLAY_BUTTONS[i].addEventListener("click", () => {
@@ -1163,7 +1187,7 @@ if (user) {
       })
       .catch((err) => console.error(err));
 
-      //   FETCH 3
+      //   FETCH 3 - for section 3 of cards
       fetch(
       "https://striveschool-api.herokuapp.com/api/deezer/search?q=beatles",
       options
@@ -1181,9 +1205,11 @@ if (user) {
           ALBUMSARTISTS[i].innerText = albums[i].artist.name;
         }
 
+        // sets onclick events to send user to album page
         const ALBUMBUTTONS = document.querySelectorAll(".albumImages3, .albumNames3");
         for (let i = 0; i < ALBUMBUTTONS.length; i++) {
           ALBUMBUTTONS[i].addEventListener("click", () => {
+            // if logged in, adds username to URL for page destination
             if (isLoggedIn) {
                 window.location.href =
               "./album.html?q=" + albums[i].album.id.toString() + "&u=" + user;
@@ -1194,7 +1220,7 @@ if (user) {
           });
         }
 
-        
+        // sets event listeners for onhover play buttons
         
         for (let i = 8; i < 16; i++) {
           PLAY_BUTTONS[i].addEventListener("click", () => {
@@ -1210,7 +1236,7 @@ if (user) {
       })
       .catch((err) => console.error(err));
 
-      //   FETCH 4
+      //   FETCH 4 - for section 4 of cards
       fetch(
       "https://striveschool-api.herokuapp.com/api/deezer/search?q=bowie",
       options
@@ -1228,9 +1254,11 @@ if (user) {
           ALBUMSARTISTS[i].innerText = albums[i].artist.name;
         }
 
+        // sets onclick events to send user to album page
         const ALBUMBUTTONS = document.querySelectorAll(".albumImages4, .albumNames4");
         for (let i = 0; i < ALBUMBUTTONS.length; i++) {
           ALBUMBUTTONS[i].addEventListener("click", () => {
+            // if logged in, adds username to URL for page destination
             if (isLoggedIn) {
                 window.location.href =
               "./album.html?q=" + albums[i].album.id.toString() + "&u=" + user;
@@ -1241,7 +1269,7 @@ if (user) {
           });
         }
 
-        
+        // sets event listeners for onhover play buttons
         
         for (let i = 16; i < 24; i++) {
           PLAY_BUTTONS[i].addEventListener("click", () => {
@@ -1255,7 +1283,10 @@ if (user) {
       })
       .catch((err) => console.error(err));
 
-      
+      // end of GET fetch requests
+
+      // Search bar code
+
       const SEARCH_CLICK = document.getElementsByClassName("openSearch")[0];
       const INPUT_BAR = document.getElementsByClassName("searchInputBar")[0];
       const INPUT_TEXT = document.getElementById("searchBar");
@@ -1276,10 +1307,11 @@ if (user) {
               "./search.html?q=" + query + "&u=" + user;
       }
 
-       
+      // end of search bar code
     
 </script>
     
+// bootstrap links
 
     <!-- Optional JavaScript; choose one of the two! -->
 
