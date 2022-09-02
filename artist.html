@@ -156,10 +156,6 @@ h5 {
   font-weight: 600;
 }
 
-.card {
-  background-color: lightgray;
-}
-
     </style>
   </head>
   <body>
@@ -321,7 +317,7 @@ h5 {
                     </div>
   
   
-<<<<<<< HEAD
+
                     <div class="mt-4 ">
                       <h5 class="pl-3">Popular release</h5>
                       <div class="container">
@@ -340,13 +336,6 @@ h5 {
                             </div> -->
                         
                         </div>
-                     
-=======
-                    <div>
-                      <h5 class="mt-5 pl-3">Popular releases</h5>
-                      <div>
-              </div>
->>>>>>> 06fa945ce684aa7c188f046cd179aea9290597e6
                     </div>
   
                 
@@ -457,9 +446,16 @@ h5 {
 
      NAMEArtist[0].innerText = artist.name
 
- 
+     const BASE_URL = (artist.tracklist)
+       const options = {
+                method: "GET",
+                headers: {
+                    "X-RapidAPI-Key":
+                    "955a238bedmshd7fff636958030ap1f1f55jsn858243bf16fa",
+                    "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
+       }};
 
-<<<<<<< HEAD
+
            fetch(BASE_URL, options)
            .then ((resOne) => resOne.json())
            .then ((data) => {
@@ -513,19 +509,35 @@ for (let i = 0; i < arrayOfTracksTwo.length; i++) {
   </div>
 </div>
             
-                           `                   
-;}
-           })
-          
-
-           .catch((err) => console.log(err));                                        
-=======
-                                                     
->>>>>>> 06fa945ce684aa7c188f046cd179aea9290597e6
-    })
+                           `;}})})
+.catch((err) => console.log(err)); 
 
    
+const HOURSANDMINUTES = (duration) => {
+                const sec = parseInt(duration)
+                let hours = Math.floor(sec / 3600);
+                let minutes = Math.floor((sec - (hours * 3600)) / 60); // get minutes
+                let seconds = sec - (hours * 3600) - (minutes * 60);
+                if (hours < 10) { hours = hours; }
+                if (minutes < 10) { minutes = "0" + minutes; }
+                if (seconds < 10) { seconds = "0" + seconds; }
+                return hours + ' hr ' + minutes + ' min'; //  MM : SS
+                }
 
+        //converting Minuetes and Seconds for duration time
+        const MINUTESANDSECONDS = (duration) => {
+                const sec = parseInt(duration)
+                let hours = Math.floor(sec / 3600);
+                let minutes = Math.floor((sec - (hours * 3600)) / 60); // get minutes
+                let seconds = sec - (hours * 3600) - (minutes * 60);
+                if (hours < 10) { hours = "0" + hours; }
+                if (minutes < 10) { minutes = "0" + minutes; }
+                if (seconds < 10) { seconds = "0" + seconds; }
+                return minutes + ':' + seconds; //  MM : SS
+                }
+    // window.onload = () => {
+    //     postAlbum()
+    //    }
 
     
     
