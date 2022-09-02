@@ -1071,6 +1071,7 @@ if (user) {
     const AUDIO_PLAYER_NAME = document.querySelectorAll("#audio-player-name")[0];
     const AUDIO_PLAYER_ARTIST = document.querySelectorAll("#audio-player-artist")[0];
     const AUDIO_PLAYER_IMAGE = document.querySelectorAll("#audio-player-image")[0];
+    const PLAY_BUTTONS = document.querySelectorAll(".song-card__play");
 
     const options = {
       method: "GET",
@@ -1112,16 +1113,7 @@ if (user) {
           });
         }
         
-        const PLAY_BUTTONS = document.querySelectorAll(".song-card__play");
-        for (let i = 0; i < PLAY_BUTTONS.length; i++) {
-          PLAY_BUTTONS[i].addEventListener("click", () => {
-            console.log("new audio set");
-            AUDIO_PLAYER.src = albums[i].preview;
-            AUDIO_PLAYER_NAME.innerText = albums[i].title;
-            AUDIO_PLAYER_ARTIST.innerText = albums[i].artist.name;
-            AUDIO_PLAYER_IMAGE.src = albums[i].album.cover_small;
-          })
-        }
+        
       })
       .catch((err) => console.error(err));
 
@@ -1156,13 +1148,18 @@ if (user) {
           });
         }
 
-        const PLAY_BUTTONS = document.querySelectorAll(".song-card__play");
-        for (let i = 8; i < (PLAY_BUTTONS.length+8); i++) {
+        
+        for (let i = 0; i < 8; i++) {
           PLAY_BUTTONS[i].addEventListener("click", () => {
             console.log("new audio set");
             AUDIO_PLAYER.src = albums[i].preview;
+            AUDIO_PLAYER_NAME.innerText = albums[i].title;
+            AUDIO_PLAYER_ARTIST.innerText = albums[i].artist.name;
+            AUDIO_PLAYER_IMAGE.src = albums[i].album.cover_small;
           })
         }
+
+        
       })
       .catch((err) => console.error(err));
 
@@ -1196,6 +1193,20 @@ if (user) {
             }
           });
         }
+
+        
+        
+        for (let i = 8; i < 16; i++) {
+          PLAY_BUTTONS[i].addEventListener("click", () => {
+            console.log("new audio set");
+            AUDIO_PLAYER.src = albums[i-8].preview;
+            AUDIO_PLAYER_NAME.innerText = albums[i-8].title;
+            AUDIO_PLAYER_ARTIST.innerText = albums[i-8].artist.name;
+            AUDIO_PLAYER_IMAGE.src = albums[i-8].album.cover_small;
+          })
+          
+        }
+        
       })
       .catch((err) => console.error(err));
 
@@ -1228,6 +1239,18 @@ if (user) {
               "./album.html?q=" + albums[i].album.id.toString();
             }
           });
+        }
+
+        
+        
+        for (let i = 16; i < 24; i++) {
+          PLAY_BUTTONS[i].addEventListener("click", () => {
+            console.log("new audio set");
+            AUDIO_PLAYER.src = albums[i-16].preview;
+            AUDIO_PLAYER_NAME.innerText = albums[i-16].title;
+            AUDIO_PLAYER_ARTIST.innerText = albums[i-16].artist.name;
+            AUDIO_PLAYER_IMAGE.src = albums[i-16].album.cover_small;
+          })
         }
       })
       .catch((err) => console.error(err));
