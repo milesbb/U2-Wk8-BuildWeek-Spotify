@@ -216,10 +216,19 @@
                         <i class="bi bi-house-door side-icons"></i>
                         <span class="position-absolute font-weight-bold" id="home" style="left:40px; top:8px; font-size: 12px; cursor: pointer;">Home</span>
                     </div>
-                    <div class="greyToWhite left-menu mb-2 search-div position-relative">
-                        <i class="bi bi-search side-icons"></i>
-                            <span class="position-absolute font-weight-bold" style="left:40px; top:8px; font-size: 12px; cursor: pointer;">Search</span>
+                    <div class="openSearch greyToWhite left-menu mb-2 search-div position-relative">
+                      <i class="bi bi-search side-icons"></i>
+                          <span class="position-absolute font-weight-bold" style="left:40px; top:8px; font-size: 12px; cursor: pointer;">Search</span>
+                          
+                  </div>
+                    <!-- Search Bar -->
+                    <div class="searchInputBar d-none greyToWhite input-group mb-3">
+                      <input id="searchBar" type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
+                      <div class="input-group-append">
+                        <button id="searchButton" class="btn btn-outline-secondary" type="button">Go</button>
+                      </div>
                     </div>
+                    <!-- END of search bar -->
                     <div class="greyToWhite left-menu mb-3 position-relative">
                         <i class="bi bi-collection side-icons"></i>
                         <span class="position-absolute font-weight-bold" style="left:40px; top:8px; font-size: 12px; cursor: pointer;">Your Library</span>
@@ -587,6 +596,29 @@ HOME_BUTTON.addEventListener("click", () => {
         postAlbum()
        }
 
+       // Search bar code
+
+      const SEARCH_CLICK = document.getElementsByClassName("openSearch")[0];
+      const INPUT_BAR = document.getElementsByClassName("searchInputBar")[0];
+      const INPUT_TEXT = document.getElementById("searchBar");
+      const INPUT_BUTTON = document.getElementById("searchButton");
+
+      SEARCH_CLICK.addEventListener("click", () => {
+        INPUT_BAR.classList.toggle("d-none");
+        SEARCH_CLICK.classList.toggle("d-none");
+      })
+
+      INPUT_BUTTON.addEventListener("click", () => {
+        searchArtist(INPUT_TEXT.value)
+      })
+
+      const searchArtist = (query) => {
+       
+        window.location.href =
+              "./search.html?q=" + query + "&u=" + user;
+      }
+
+      // end of search bar code
 
     </script>
   </script>
