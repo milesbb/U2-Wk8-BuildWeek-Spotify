@@ -1089,9 +1089,20 @@ if (user) {
         }
 
         // sets onclick events to send user to album page
-        const ALBUMBUTTONS = document.querySelectorAll(".albumImages, .albumNames");
+        const ALBUMBUTTONS = document.querySelectorAll(".albumImages");
+        const ALBUMBUTTONNAMES = document.querySelectorAll(".albumNames")
         for (let i = 0; i < ALBUMBUTTONS.length; i++) {
           ALBUMBUTTONS[i].addEventListener("click", () => {
+            // if logged in, adds username to URL for page destination
+            if (isLoggedIn) {
+                window.location.href =
+              "./album.html?q=" + albums[i].album.id.toString() + "&u=" + user;
+            } else {
+                window.location.href =
+              "./album.html?q=" + albums[i].album.id.toString();
+            }
+          });
+          ALBUMBUTTONNAMES[i].addEventListener("click", () => {
             // if logged in, adds username to URL for page destination
             if (isLoggedIn) {
                 window.location.href =
@@ -1126,9 +1137,20 @@ if (user) {
         }
 
         // sets onclick events to send user to album page
-        const ALBUMBUTTONS = document.querySelectorAll(".albumImages2, .albumNames2");
+        const ALBUMBUTTONS = document.querySelectorAll(".albumImages2");
+        const ALBUMBUTTONNAMES = document.querySelectorAll(".albumNames2");
         for (let i = 0; i < ALBUMBUTTONS.length; i++) {
           ALBUMBUTTONS[i].addEventListener("click", () => {
+            // if logged in, adds username to URL for page destination
+            if (isLoggedIn) {
+                window.location.href =
+              "./album.html?q=" + albums[i].album.id.toString() + "&u=" + user;
+            } else {
+                window.location.href =
+              "./album.html?q=" + albums[i].album.id.toString();
+            }
+          });
+          ALBUMBUTTONNAMES[i].addEventListener("click", () => {
             // if logged in, adds username to URL for page destination
             if (isLoggedIn) {
                 window.location.href =
@@ -1175,9 +1197,20 @@ if (user) {
         }
 
         // sets onclick events to send user to album page
-        const ALBUMBUTTONS = document.querySelectorAll(".albumImages3, .albumNames3");
+        const ALBUMBUTTONS = document.querySelectorAll(".albumImages3");
+        const ALBUMBUTTONNAMES = document.querySelectorAll(".albumNames3");
         for (let i = 0; i < ALBUMBUTTONS.length; i++) {
           ALBUMBUTTONS[i].addEventListener("click", () => {
+            // if logged in, adds username to URL for page destination
+            if (isLoggedIn) {
+                window.location.href =
+              "./album.html?q=" + albums[i].album.id.toString() + "&u=" + user;
+            } else {
+                window.location.href =
+              "./album.html?q=" + albums[i].album.id.toString();
+            }
+          });
+          ALBUMBUTTONNAMES[i].addEventListener("click", () => {
             // if logged in, adds username to URL for page destination
             if (isLoggedIn) {
                 window.location.href =
@@ -1224,9 +1257,20 @@ if (user) {
         }
 
         // sets onclick events to send user to album page
-        const ALBUMBUTTONS = document.querySelectorAll(".albumImages4, .albumNames4");
+        const ALBUMBUTTONS = document.querySelectorAll(".albumImages4");
+        const ALBUMBUTTONNAMES = document.querySelectorAll(".albumNames4");
         for (let i = 0; i < ALBUMBUTTONS.length; i++) {
           ALBUMBUTTONS[i].addEventListener("click", () => {
+            // if logged in, adds username to URL for page destination
+            if (isLoggedIn) {
+                window.location.href =
+              "./album.html?q=" + albums[i].album.id.toString() + "&u=" + user;
+            } else {
+                window.location.href =
+              "./album.html?q=" + albums[i].album.id.toString();
+            }
+          });
+          ALBUMBUTTONNAMES[i].addEventListener("click", () => {
             // if logged in, adds username to URL for page destination
             if (isLoggedIn) {
                 window.location.href =
