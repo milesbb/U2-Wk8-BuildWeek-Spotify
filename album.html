@@ -196,6 +196,9 @@
   border: none;
   color: white;
 }
+.albumArtists {
+  cursor: pointer;
+}
 
     </style>
   </head>
@@ -511,7 +514,7 @@ HOME_BUTTON.addEventListener("click", () => {
                                             <p style="font-size:10px; margin-bottom:2px;">ALBUM</p>
                                             <h1>${data.title}</h1>
                                             <div>
-                                                <p style="font-size:10px"><strong>
+                                                <p style="font-size:10px" class="albumArtists"><strong>
                                                 <img class="mr-2" src="${data.cover_small}" alt=""
                                                 style="border-radius: 2rem; height: 20px;"
                                                 alt="Original Album Cover"/>${data.artist.name} • </strong>
@@ -542,7 +545,7 @@ HOME_BUTTON.addEventListener("click", () => {
                                                     <div style="line-height:14px;">
                                                         <span style="font-size:13px;">
                                                         ${singleTrack.title}</span><br>
-                                                        <span style="font-size:11px; color:#d3d3d3">
+                                                        <span style="font-size:11px; color:#d3d3d3" class="albumArtists">
                                                         ${data.artist.name}</span>
                                                     </div>
                                                 </div>
@@ -559,6 +562,21 @@ HOME_BUTTON.addEventListener("click", () => {
             AUDIO_PLAYER_NAME.innerText = data.tracks.data[i].title;
             AUDIO_PLAYER_ARTIST.innerText = data.tracks.data[i].artist.name;
             AUDIO_PLAYER_IMAGE.src = data.tracks.data[i].album.cover_small;
+          })
+        }
+
+        const ALBUMSARTISTS = document.querySelectorAll(".albumArtists");
+        // sets onclick events to send user to artist page
+        for(let i=0;i<ALBUMSARTISTS.length;i++){
+          ALBUMSARTISTS[i].addEventListener("click",()=>{
+            console.log("attempt")
+            if (isLoggedIn) {
+                window.location.href =
+              "./artist.html?q=" + data.artist.id.toString() + "&u=" + user;
+            } else {
+                window.location.href =
+              "./artist.html?q=" + data.artist.id.toString();
+            }
           })
         }
 
