@@ -14,6 +14,7 @@
 
     <style>
         body {
+          overscroll-behavior: none;
   color: white;
   background: rgb(71, 71, 71);
   animation: 3s ease-out 0s 1 fadedOpacity;
@@ -156,6 +157,19 @@ h5 {
   font-weight: 600;
 }
 
+.card {
+  color: gray;
+  background-color: #181818;
+}
+
+a {
+  color: gray;
+}
+
+a:hover {
+  color: gray;
+}
+
     </style>
   </head>
   <body>
@@ -228,48 +242,50 @@ h5 {
             <div class="col-10 pl-0 pr-0">
 
             <!--image-->
-                <section>
-                    <div class="d-flex flex-nowrap">
-                      <div class="order-3  ">
-                          <div class="container pl-0 pr-0">
-                              <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                              <div class="carousel-inner">
-                                <div class="carousel-item active" style="width: 1400px; height: 380px;" >
-                                    <img id="albumId" style="width: 100%; min-height: 100% ;" src="https://images.unsplash.com/photo-1446057032654-9d8885db76c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2128&q=80" alt="First slide">
-                                </div>
-                              </div>
 
-                              <div style="position:absolute;top:43%;left:2%;">
-                              
-
-                                <div class="d-flex ml-1" >
-                                  <div><i class="bi bi-patch-check-fill " style="color:blue;"></i></div>
-                                  <div class="ml-2 mt-1"><h6 style="font-size:12px;">Verfied Artist</h6></div>
-                                </div>
-
-                                <div class="">
-                                  <h1 class="nameArtist" style="font-size:90px;font-family:sans-serif;font-weight:bold;">Queen</h1>
-                                </div>
-
-                                <div class="ml-1">
-                                  <h6 style="font-size:13px;"><span>37,873,853</span>  monthly listeners</h6>
-                                </div>
-
-                              </div>
+              <section class="w-75">
+                <div class="d-flex flex-nowrap">
+                  <div class="order-3  ">
+                      <div class="container pl-0 pr-0">
+                          <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                          <div class="carousel-inner">
+                            <div class="carousel-item active" style="width: 75rem; height: 380px;" >
+                                <img id="albumId" style="width: 100%; min-height: 100% ;" src="https://images.unsplash.com/photo-1446057032654-9d8885db76c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2128&q=80" alt="First slide">
                             </div>
                           </div>
+
+                          <div style="position:absolute;top:43%;left:2%;">
+                          
+
+                            <div class="d-flex ml-1" >
+                              <div><i class="bi bi-patch-check-fill " style="color:blue;"></i></div>
+                              <div class="ml-2 mt-1"><h6 style="font-size:12px;">Verfied Artist</h6></div>
+                            </div>
+
+                            <div class="">
+                              <h1 class="nameArtist" style="font-size:90px;font-family:sans-serif;font-weight:bold;">Queen</h1>
+                            </div>
+
+                            <div class="ml-1">
+                              <h6 style="font-size:13px;"><span>37,873,853</span>  monthly listeners</h6>
+                            </div>
+
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                    
-                </section> 
+                  </div>
+                </div>
+                
+            </section> 
+
+                
 
                
 
-                <section>
-                  <div class="main" style="background: rgb(0,0,0);
-                  background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(105,105,105,0.9458377100840336) 87%, rgba(221,221,221,0.8449973739495799) 100%);">
+                <section style="background: rgb(6,6,6);
+                background: linear-gradient(0deg, rgba(6,6,6,1) 77%, rgba(65,64,64,1) 100%);">
+                  <div class="main mb-5">
                     <div>
-
                         <div class="container-fluid pt-3">
                           <div class="row">
                               <div class=" ml-4">
@@ -290,41 +306,26 @@ h5 {
                           </div>
                         </div>
 
-
                         <div class="mt-4 ">
                           <h5 class="pl-3">Popular</h5>
                           <div id="table-info" class="col-12 justify-content-start">
-                            <div class=" d-flex bd-highlight">
-                                <div class="number pl-3 bd-highlight text-monospace" style="font-size:13px; color:#d3d3d3">#</div>
-                                <div class="title-artist pl-3 bd-highlight">
-                                    <div style="font-size: 11px;">
-                                       TITLE
-                                    </div>
+                            <div class=" d-flex bd-highlight">    
                                 </div>
-                                <div class="time ml-auto mb-2 pr-4 bd-highlight" style="font-size:12px; color:#d3d3d3">  
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
-                                    <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
-                                    <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
-                                </svg>
+                                  <div class="time ml-auto mb-2 pr-4 bd-highlight" style="font-size:12px; color:#d3d3d3">  
                                 </div>
                             </div>
-                            <hr class="mt-1"style="border: 0.25px solid rgba(137, 137, 137, 0.578);">
+                            
                         </div>
-                    
-                       
-                  
                       </div>
                     </div>
   
-  
+                    <p class="ml-4 mt-4 font-weight-bold" style="color: grey; font-size: 0.7rem; cursor: pointer;">SEE MORE</p>
 
-                    <div class="mt-4 ">
-                      <h5 class="pl-3">Popular release</h5>
+                    <div class="mt-4 mb-5">
+                      <h5 class="pl-3 text-white">Popular release</h5>
                       <div class="container">
-                        <div class="row">
-                          <div id="table-info-two" class = "col-12 col-sm-6 col-md-4 col-lg-3">
-                            
-                          </div>
+                        <div class="row" id="table-info-two">
+                          
                         </div>
                       </div>
                   
@@ -472,19 +473,16 @@ for (let i = 0; i < arrayOfTracks.length; i++) {
          
     titleList.innerHTML +=   `
     <div class="mt-3 d-flex bd-highlight">
-                                <div class="number mt-2 pl-3 bd-highlight text-monospace" style="font-size:13px; color:#d3d3d3">${i + 1}</div>
-                                <div class="title-artist pl-4 bd-highlight">
+                                <div class="mt-2 number pl-3 bd-highlight" style="font-size:0.8rem; color:grey">${i + 1}</div>
+                                <div class="title-artist pl-4 mr-auto bd-highlight">
                                     <div style="line-height:14px;">
-                                      <img height="20px" width="20px"  src="${singleTrack.album.cover_small}" alt="">
+                                      <img height="40px" width="40px"  src="${singleTrack.album.cover_small}" alt="">
                                         <span style="font-size:13px;">
                                         ${singleTrack.title}</span><br>
-            
-                                        <a class="artistLink" href="artist.html?q=${data.id}" style="font-size:11px; color:#d3d3d3">
-                                        ${singleTrack.artist.name}</a>
                                     </div>
                                 </div>
-                                <div class="ml-auto">${singleTrack.rank}</div>
-                                <div class="time ml-auto mt-2 pr-4 bd-highlight" style="font-size:12px; color:#d3d3d3">${MINUTESANDSECONDS(singleTrack.duration)}</div>
+                                <div class="mt-2 mr-5" style="font-size:0.8rem; color:grey;">${singleTrack.rank.toLocaleString()}</div>
+                                <div class="time ml-5 mt-2 pr-4 bd-highlight" style="font-size:12px; color:#d3d3d3">${MINUTESANDSECONDS(singleTrack.duration)}</div>
                             </div>
                            `   
                    
@@ -493,20 +491,22 @@ for (let i = 0; i < arrayOfTracks.length; i++) {
 
 const arrayOfTracksTwo = data.data
             console.log(arrayOfTracksTwo);
-for (let i = 0; i < arrayOfTracksTwo.length; i++) {
+for (let i = 0; i < 4; i++) {
     const singleTrackTwo = arrayOfTracksTwo[i]
   
     let titleListTwo = document.getElementById("table-info-two")
          
     titleListTwo.innerHTML +=   `
-
+    <div class= "mb-5 col-sm-6 col-md-4 col-xl-3">
+                            
+                          
     <div class="card">
-  <img class="card-img-top" style="height:300px" src="${singleTrackTwo.album.cover_medium}" alt="Card image cap">
+  <img class="card-img-top" style="3rem" src="${singleTrackTwo.album.cover_medium}" alt="Card image cap">
   <div class="card-body">
     <h5 class="card-title">${singleTrackTwo.title_short}</h5>
-    <p class="card-text">${singleTrackTwo.title_version}<span> &middot; ${singleTrackTwo.album.type}</span></p>
     <a href="artist.html?q=${data.id}">${singleTrackTwo.artist.name}</a>
   </div>
+</div>
 </div>
             
                            `;}})})
